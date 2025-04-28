@@ -1,0 +1,72 @@
+@media (max-width: 750px) {
+    #moblieNavUl {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #PCNavUl {
+      display: none;
+    }
+    .containerAboutSkill, .contactUs{
+      display: flex;
+      flex-direction: column;
+    }
+    .aboutMe {
+      flex-direction: column;
+    }
+    .aboutMe img{
+      width: 100%;
+      height: 250px;
+      /* background-color: red; */
+      z-index: 0;
+    }
+    .aboutMe .myInf {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+    }
+    .skill{
+      width: auto;
+    }
+    .skillSection{
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+    }
+    .footerUl {
+      flex-direction: column;
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+  
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .project-slider h1 {
+    font-size: 2rem;
+  }
+
+  .project-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+  }
+}
+
+
