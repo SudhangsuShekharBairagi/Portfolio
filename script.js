@@ -5,7 +5,26 @@ const mobileNav = document.querySelector('#mobileNav');
 const MenuLiMoblie = document.querySelectorAll('.MenuLiMoblie');
 let nav = document.querySelector('.navClass')
 nav.classList.remove('shadow');
-
+const toggleBtn = document.getElementById("toggle-btn");
+const iconToggleMoon = document.querySelector(".fa-moon"),
+iconToggleSun = document.querySelector(".fa-sun");
+iconToggleSun.classList.add('hide');
+toggleBtn.addEventListener('click', ()=> {
+  document.body.classList.toggle('dark-mode');
+  iconToggleSun.classList.toggle('hide');
+  iconToggleMoon.classList.toggle('hide');
+  
+  if(document.body.classList.contains('dark-mode')){
+    localStorage.setItem("theme", "dark");
+  }else {
+    localStorage.setItem("theme", "light");
+  }
+});
+window.addEventListener("load", ()=> {
+  if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark-mode");
+  }
+});
 // function updateCSSVariable(variable, value) {
 //     document.documentElement.style.setProperty(variable, value);
 // }
@@ -31,52 +50,52 @@ nav.classList.remove('shadow');
 //     }
 // })
 
-function updateCSSVariable(variable, value) {
-  document.documentElement.style.setProperty(variable, value);
-}
+// function updateCSSVariable(variable, value) {
+//   document.documentElement.style.setProperty(variable, value);
+// }
 
-function calculateLuminance(hex) {
-  const rgb = hex.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
-  const r = parseInt(rgb[1], 16) / 255;
-  const g = parseInt(rgb[2], 16) / 255;
-  const b = parseInt(rgb[3], 16) / 255;
+// function calculateLuminance(hex) {
+//   const rgb = hex.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+//   const r = parseInt(rgb[1], 16) / 255;
+//   const g = parseInt(rgb[2], 16) / 255;
+//   const b = parseInt(rgb[3], 16) / 255;
 
-  const toLinear = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
-  const lr = toLinear(r);
-  const lg = toLinear(g);
-  const lb = toLinear(b);
+//   const toLinear = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+//   const lr = toLinear(r);
+//   const lg = toLinear(g);
+//   const lb = toLinear(b);
 
-  return 0.2126 * lr + 0.7152 * lg + 0.0722 * lb;
-}
+//   return 0.2126 * lr + 0.7152 * lg + 0.0722 * lb;
+// }
 
-function isLightColor(hex) {
-  return calculateLuminance(hex) > 0.5;
-}
+// function isLightColor(hex) {
+//   return calculateLuminance(hex) > 0.5;
+// }
 
-navBarColor.addEventListener('input', () => {
-  const color = navBarColor.value;
-  // updateCSSVariable('--navBg', color);
-  updateCSSVariable('--bodyBg', color); 
+// navBarColor.addEventListener('input', () => {
+//   const color = navBarColor.value;
+//   // updateCSSVariable('--navBg', color);
+//   updateCSSVariable('--bodyBg', color); 
 
-  // Check luminance for readability
-  if (isLightColor(color)) {
-    updateCSSVariable('--navBg', '#218cea');
-      updateCSSVariable('--textColor', '#000000');
-      // updateCSSVariable('--bodyBg', '#ffffff');  // Light background when nav is light
-  } else {
-      updateCSSVariable('--navBg', '#1c1a1a');
-      updateCSSVariable('--textColor', '#ffffff');
-      // updateCSSVariable('--bodyBg', '#1c1a1a');  // Dark background when nav is dark
-  }
+//   // Check luminance for readability
+//   if (isLightColor(color)) {
+//     updateCSSVariable('--navBg', '#218cea');
+//       updateCSSVariable('--textColor', '#000000');
+//       // updateCSSVariable('--bodyBg', '#ffffff');  // Light background when nav is light
+//   } else {
+//       updateCSSVariable('--navBg', '#1c1a1a');
+//       updateCSSVariable('--textColor', '#ffffff');
+//       // updateCSSVariable('--bodyBg', '#1c1a1a');  // Dark background when nav is dark
+//   }
 
-  // Example of color scheme adjustments based on the selected nav color
-  if (color === "#4c2424") {  // Specific color lock
-      updateCSSVariable('--bodyBg', '#2b2b2b');
-      updateCSSVariable('--accentColor', '#ff7f7f');
-  } else if (color === "#38bdf8") {  // Another specific color lock
-      updateCSSVariable('--accentColor', '#ffd700');
-  }
-});
+//   // Example of color scheme adjustments based on the selected nav color
+//   if (color === "#4c2424") {  // Specific color lock
+//       updateCSSVariable('--bodyBg', '#2b2b2b');
+//       updateCSSVariable('--accentColor', '#ff7f7f');
+//   } else if (color === "#38bdf8") {  // Another specific color lock
+//       updateCSSVariable('--accentColor', '#ffd700');
+//   }
+// });
 
 MenuLiMoblie.forEach(element => {
     element.addEventListener('click', ()=> menuShowAndHide());
