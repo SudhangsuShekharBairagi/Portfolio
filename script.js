@@ -162,92 +162,92 @@ window.addEventListener('scroll', (e)=> {
 // });
 
 
-// Select necessary elements
-const sliderWrapper = document.querySelector('.slider-wrapper');
-const slides = document.querySelectorAll('.project-card');
-const prevArrow = document.querySelector('.slider-arrow.left');
-const nextArrow = document.querySelector('.slider-arrow.right');
-const totalSlides = slides.length;
-let currentIndex = 0;
+// // Select necessary elements
+// const sliderWrapper = document.querySelector('.slider-wrapper');
+// const slides = document.querySelectorAll('.project-card');
+// const prevArrow = document.querySelector('.slider-arrow.left');
+// const nextArrow = document.querySelector('.slider-arrow.right');
+// const totalSlides = slides.length;
+// let currentIndex = 0;
 
-// Set initial state
-let slideWidth = slides[0].offsetWidth;
-let isSwiping = false;
-let swipeStartX = 0;
+// // Set initial state
+// let slideWidth = slides[0].offsetWidth;
+// let isSwiping = false;
+// let swipeStartX = 0;
 
-// Function to update the slider position
-function updateSliderPosition() {
-  const offset = -currentIndex * slideWidth;
-  sliderWrapper.style.transform = `translateX(${offset}px)`;
-}
+// // Function to update the slider position
+// function updateSliderPosition() {
+//   const offset = -currentIndex * slideWidth;
+//   sliderWrapper.style.transform = `translateX(${offset}px)`;
+// }
 
-// Function to go to the previous slide
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-  updateSliderPosition();
-}
+// // Function to go to the previous slide
+// function prevSlide() {
+//   currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+//   updateSliderPosition();
+// }
 
-// Function to go to the next slide
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  updateSliderPosition();
-}
+// // Function to go to the next slide
+// function nextSlide() {
+//   currentIndex = (currentIndex + 1) % totalSlides;
+//   updateSliderPosition();
+// }
 
-// Autoplay functionality
-let autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+// // Autoplay functionality
+// let autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
 
-// Stop autoplay on manual interaction
-function stopAutoplay() {
-  clearInterval(autoplayInterval);
-  autoplayInterval = setInterval(nextSlide, 5000); // Restart autoplay
-}
+// // Stop autoplay on manual interaction
+// function stopAutoplay() {
+//   clearInterval(autoplayInterval);
+//   autoplayInterval = setInterval(nextSlide, 5000); // Restart autoplay
+// }
 
-// Add event listeners to arrows
-prevArrow.addEventListener('click', () => {
-  prevSlide();
-  stopAutoplay();
-});
+// // Add event listeners to arrows
+// prevArrow.addEventListener('click', () => {
+//   prevSlide();
+//   stopAutoplay();
+// });
 
-nextArrow.addEventListener('click', () => {
-  nextSlide();
-  stopAutoplay();
-});
+// nextArrow.addEventListener('click', () => {
+//   nextSlide();
+//   stopAutoplay();
+// });
 
-// Swipe functionality for mobile
-function handleSwipeStart(e) {
-  isSwiping = true;
-  swipeStartX = e.changedTouches[0].pageX;
-}
+// // Swipe functionality for mobile
+// function handleSwipeStart(e) {
+//   isSwiping = true;
+//   swipeStartX = e.changedTouches[0].pageX;
+// }
 
-function handleSwipeMove(e) {
-  if (!isSwiping) return;
-  const swipeEndX = e.changedTouches[0].pageX;
-  if (swipeStartX - swipeEndX > 50) {
-    // Swiped left
-    nextSlide();
-    stopAutoplay();
-  } else if (swipeEndX - swipeStartX > 50) {
-    // Swiped right
-    prevSlide();
-    stopAutoplay();
-  }
-}
+// function handleSwipeMove(e) {
+//   if (!isSwiping) return;
+//   const swipeEndX = e.changedTouches[0].pageX;
+//   if (swipeStartX - swipeEndX > 50) {
+//     // Swiped left
+//     nextSlide();
+//     stopAutoplay();
+//   } else if (swipeEndX - swipeStartX > 50) {
+//     // Swiped right
+//     prevSlide();
+//     stopAutoplay();
+//   }
+// }
 
-function handleSwipeEnd() {
-  isSwiping = false;
-}
+// function handleSwipeEnd() {
+//   isSwiping = false;
+// }
 
-sliderWrapper.addEventListener('touchstart', handleSwipeStart);
-sliderWrapper.addEventListener('touchmove', handleSwipeMove);
-sliderWrapper.addEventListener('touchend', handleSwipeEnd);
+// sliderWrapper.addEventListener('touchstart', handleSwipeStart);
+// sliderWrapper.addEventListener('touchmove', handleSwipeMove);
+// sliderWrapper.addEventListener('touchend', handleSwipeEnd);
 
-// Handle resize for responsive design
-window.addEventListener('resize', () => {
-  slideWidth = slides[0].offsetWidth;
-  updateSliderPosition();
-});
+// // Handle resize for responsive design
+// window.addEventListener('resize', () => {
+//   slideWidth = slides[0].offsetWidth;
+//   updateSliderPosition();
+// });
 
-// Initial position update
-updateSliderPosition();
+// // Initial position update
+// updateSliderPosition();
 
 

@@ -1,39 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 * {
   margin: 0;
   padding: 0;
-  font-family: cursive;
+  /* font-family: cursive; */
+   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 
 }
 
 :root {
   --bgColor: rgb(149, 230, 250);
-  --navBg: #218cea;
-  --textColor: #000000;
-  --bodyBg: #ffff;
+  /* --navBg: #218cea; */
+  /* --textColor: #000000; */
+  /* --bodyBg: #ffff; */
   --WidthBar: 88%;
   --shadowColor: rgb(60, 251, 22);
-  --accentColor: #38bdf8;
+  /* --accentColor: #38bdf8; */
   --cardBg: #1c273e;
 
   --prog1: #fef608;
   --prog2: #25fc50;
   --prog3: #057c1d;
 
+  --bodyBg: #f4f7ff;
+--navBg: #ffffff;
+--textColor: #111;
+--accentColor: #007BFF;
+
+
 }
 body.dark-mode{
   --bgcolor: rgb(255, 253, 253);
-  --navBg: #000000;
-  --textColor: #ffffff;
-  --bodyBg: #222222;
+  /* --navBg: #000000; */
+  /* --textColor: #ffffff; */
+  /* --bodyBg: #222222; */
   --WidthBar: 88%;
   --shadowColor: rgb(17, 25, 15);
-  --accentColor: #000000;
+  /* --accentColor: #000000; */
   --cardBg: #000000;
 
   --prog1: #2d2d2d9e;
   --prog2: #88848491;
   --prog3: #373736c0;
+
+  --bodyBg: #111827;
+--navBg: #1f2937;
+--textColor: #e5e7eb;
+--accentColor: #38bdf8;
+
 }
 .hide {
   display: none;
@@ -93,7 +107,7 @@ body .navContainer nav ul #nameWEB {
 body .navContainer nav ul li {
   cursor: pointer;
   font-size: 22px;
-  color: var(--textColor);
+  /* color: var(--textColor); */
 }
 
 a {
@@ -701,54 +715,34 @@ body .navContainer nav ul #navBar:hover::before {
 
  /* prject-selectio */
 
-.project-slider {
-  /* width: 100%; */
-
+.project-section {  
   background-color: var(--navBg);
   text-align: center;
   padding-bottom: 30px;
-  /* margin: 1em; */
 }
-
-.project-slider h1 {
-  /* margin: 1em; */
-  padding: 1em;
-  text-align: center;
-  color: var(--textColor);
-}
-
-.slider-container {
-  position: relative;
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 1em;
-  border-radius: 20px;
-  /* padding-bottom: 30px; */
-  /* background-color: #057c1d; */
-  animation: myAni linear;
-  animation-timeline: view();
-  animation-range: entry;
-}
-
-.slider-wrapper {
+.project-container {
   display: flex;
-  gap: 25px;
-  transition: transform 0.6s ease-in-out;
-  will-change: transform;
-  /* background-color: yellow; */
-  margin: 20px;
-
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
 }
-
 .project-card {
-  flex: 0 0 100%;
-  max-width: 95%;
-  background-color: var(--bodyBg);
-  border-radius: 20px;
+  flex: 1 1 clamp(300px, 35%, 400px);
+  max-width: 35%;
+  height: 400px;
+  /* background-color: var(--bodyBg); */
+  border-radius: 10px;
   padding: 1.5rem;
   /* box-shadow: 0 10px 30px var(--shadowColor); */
   color: var(--textColor);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  margin: 10px;
+  /* display: flex; */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 
 }
 
@@ -778,48 +772,21 @@ body .navContainer nav ul #navBar:hover::before {
   opacity: 0.8;
 }
 
-.slider-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--navBg);
-  border: none;
-  font-size: 2rem;
-  color: var(--accentColor);
-  cursor: pointer;
-  z-index: 2;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  transition: background 0.3s;
-}
-
-.slider-arrow:hover {
-  background: var(--accentColor);
-  color: #0a0f1c;
-}
-
-.slider-arrow.left {
-  left: 10px;
-}
-
-.slider-arrow.right {
-  right: 10px;
-}
-
 /* footer  */
 footer {
-  width: 100%;
-  color: var(--textColor);
-  background-color: var(--navBg);
+  width: auto;
+  /* color: var(--textColor); */
+  /* background-color: var(--navBg); */
   /* padding-bottom: 30px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 0px 30px 0px;
+  /* padding: 30px 0px 30px 0px; */
   
+  background: linear-gradient(45deg, #1f2937, #111827);
+  color: white;
+  padding: 2rem;
 }
 .goToHASPC {
   display: flex;
@@ -848,6 +815,9 @@ footer {
 #footerUl li {
   position: relative;
   overflow: hidden;
+}
+#footerUl li a, #footerUl li i {
+color: white;
 }
 
 #footerUl li a:hover {
