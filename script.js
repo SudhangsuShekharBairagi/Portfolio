@@ -7,6 +7,7 @@ const loader = document.querySelector('.loader');
 
 window.addEventListener('load', ()=>{
   loader.style.display = 'none';
+  typeWriter();
 })
 let nav = document.querySelector('.navClass')
 nav.classList.remove('shadow');
@@ -52,4 +53,48 @@ window.addEventListener('scroll', (e)=> {
 
 
 
+
+// const text = "Web Developer 💻 | Tech Enthusiast ⚡";
+// const typeSpeed = 200;
+// const delayAfterTyping = 2000;
+// let i = 0;
+// function typeWriter() {
+//   if(i < text.length){
+//     document.querySelector(".typingAnimation").innerHTML += text.charAt(i);
+//     i++;
+//     setTimeout(typeWriter,typeSpeed);
+//   }else{
+//     setTimeout(()=> {
+//        document.querySelector(".typingAnimation").innerHTML = "";
+//        i = 0;
+//        typeWriter();
+//     }, delayAfterTyping);
+//   }
+// }
+// window.onload = typeWriter;
+const texts = ["Web Developer", "Tech Enthusiast", "Open Source Contributor"];
+const typeSpeed = 150;
+const delayAfterTyping = 2000;
+let textIndex = 0;
+let charIndex = 0;
+
+function typeWriter() {
+  const currentText = texts[textIndex];
+  const typingElement = document.querySelector(".typingAnimation");
+
+  if (charIndex < currentText.length) {
+    typingElement.innerHTML += currentText.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeWriter, typeSpeed);
+  } else {
+    setTimeout(() => {
+      typingElement.innerHTML = "";
+      charIndex = 0;
+      textIndex = (textIndex + 1) % texts.length; // Move to next item in array
+      setTimeout(typeWriter, typeSpeed);
+    }, delayAfterTyping);
+  }
+}
+
+// window.onload = typeWriter;
 

@@ -26,6 +26,7 @@
 --navBg: #ffffff;
 --textColor: #111;
 --accentColor: #007BFF;
+--typingColor:#00FF00;
 
 
 }
@@ -47,7 +48,7 @@ body.dark-mode{
 --navBg: #1f2937;
 --textColor: #e5e7eb;
 --accentColor: #38bdf8;
-
+--typingColor:#00FFFF;
 }
 .hide {
   display: none;
@@ -377,6 +378,17 @@ body .navContainer nav ul #navBar:hover::before {
   font-size: 1rem;
 }
 
+.typingAnimation {
+  white-space: wrap;
+  overflow: hidden;
+  border-right: 2px solid #00ff00 ;
+  width: fit-content;
+  color: var(--typingColor);
+  animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+  50% {border-color: transparent;}  
+}
 .MainBodyContainer .home .homePic {
   flex: 1;
   height: 300px;
@@ -459,6 +471,7 @@ body .navContainer nav ul #navBar:hover::before {
 }
 
 /* about */
+
 .containerAboutSkill {
   width: 100%;
   display: grid;
