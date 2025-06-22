@@ -46,8 +46,10 @@
   
 @media (max-width: 768px) {
   .project-card {
-    flex: 0 0 75%;
-    max-width: 75%;
+    flex: 0 0 90%;
+    max-width:90%;
+    height:auto;
+    padding: 10px;
   }
 
 
@@ -65,3 +67,25 @@
 }
 
 
+@media (max-width: 1200px)  {
+  .project-card {
+    flex: 0 0 90%;
+    max-width:90%;
+    height:auto;
+    padding: 10px;
+  }
+   .aboutMe {
+      flex-direction: column;
+    }
+    .aboutMe img{
+      width: 100%;
+      height: 250px;
+      /* background-color: red; */
+      z-index: 0;
+    }
+    .aboutMe .myInf {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+    }
+}

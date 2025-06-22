@@ -557,7 +557,7 @@ body .navContainer nav ul #navBar:hover::before {
   animation-range: entry;
 }
 
-.containerAboutSkill #downloadCv #downloadButton, .feedback #submit{
+.containerAboutSkill #downloadCv #downloadButton, .feedback #submit,.project-section .project-container .projectButton{
   width: 100px;
   height: 40px;
   display: flex;
@@ -565,15 +565,16 @@ body .navContainer nav ul #navBar:hover::before {
   justify-content: center;
   background-color: #fcf8f8;
   border-radius: 10px;
-  box-shadow: 0 2px 5px black;
+  box-shadow: 0 2px 5px rgb(79, 79, 79);
   position: relative;
   transition: background-color 0.3s ease, transform 0.3s ease;
   color: #000000;
+  border: none;
 }
-.containerAboutSkill #downloadCv #downloadButton:hover, .feedback #submit:hover{
+.containerAboutSkill #downloadCv #downloadButton:hover, .feedback #submit:hover, .project-section .project-container .projectButton:hover{
   background-color: #25fc50;
 }
-.containerAboutSkill #downloadCv #downloadButton:active, .feedback #submit:active{
+.containerAboutSkill #downloadCv #downloadButton:active, .feedback #submit:active, .project-section .project-container .projectButton:active{
   transform: translateY(5px);
 }
 
@@ -728,9 +729,15 @@ body .navContainer nav ul #navBar:hover::before {
  /* prject-selectio */
 
 .project-section {  
+  width: 100%;
   background-color: var(--navBg);
   text-align: center;
   padding-bottom: 30px;
+}
+.project-section  h1 {
+  color: var(--textColor);
+  margin: 1em;
+  padding-top: 20px;
 }
 .project-container {
   display: flex;
@@ -738,6 +745,7 @@ body .navContainer nav ul #navBar:hover::before {
   /* flex-direction: column; */
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 .project-card {
   flex: 1 1 clamp(300px, 35%, 400px);
@@ -745,11 +753,14 @@ body .navContainer nav ul #navBar:hover::before {
   height: 400px;
   /* background-color: var(--bodyBg); */
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 20px;
   /* box-shadow: 0 10px 30px var(--shadowColor); */
   color: var(--textColor);
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 10px;
+
   /* display: flex; */
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
