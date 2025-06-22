@@ -71,6 +71,34 @@
   
     }
   }
+  /* loader */
+  @keyframes loaderRoated {
+            0% {
+                transform: rotate(0deg);
+       
+                border-top: 10px double rgb(255, 12, 12);
+                
+            }
+            20% {
+                border-top: 10px dotted rgb(255, 198, 12);
+            }
+            40% {
+          
+                border-top: 10px double rgb(255, 12, 12);
+            }
+            60% {
+                border-top: 10px dotted rgb(73, 255, 12);
+            }
+            80%{
+                border-top: 10px double rgb(255, 12, 12);
+            }
+            100% {
+                transform: rotate(360deg);
+                border-top: 10px dotted rgb(85, 255, 12);                
+            }
+           
+            
+        }
 
   @supports not (animation-timeline: view()){
     .about,.aboutMe .myInf,.aboutMe img,.containerAboutSkill #dowloadCv,.skillSection .concept,.contactUs .feedback ,.slider-container {

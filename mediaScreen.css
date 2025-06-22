@@ -46,8 +46,8 @@
   
 @media (max-width: 768px) {
   .project-card {
-    flex: 0 0 90%;
-    max-width: 90%;
+    flex: 0 0 75%;
+    max-width: 75%;
   }
 
 
