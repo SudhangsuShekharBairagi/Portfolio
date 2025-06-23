@@ -5,8 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sudhangsu Shekhar Bairagi | BCA Student Portfolio</title>
+  <link rel="icon" href="assert/SudhangsuShekhar.png" type="image/png">
+
   <meta name="description" content="Explore the portfolio of Sudhangsu Shekhar Bairagi - a BCA student and aspiring software developer passionate about full-stack development.">
-  <meta name="keywords" content="Sudhangsu, Bairagi, Portfolio, Web Developer, BCA, JavaScript, HTML, CSS, React, Java, DBMS">
+  <meta name="keywords" content="Sudhangsu,Sudhansu, Shekhar, Bairagi, Portfolio, Web Developer, BCA, JavaScript, HTML, CSS, React, Java, DBMS">
   <meta name="author" content="Sudhangsu Shekhar Bairagi">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -29,9 +31,11 @@
 
       </ul>
       <ul id="PCNavUl">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#About">About</a></li>
-        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#home" class="navLink">Home</a></li>
+        <li><a href="#About" class="navLink">About</a></li>
+        <li><a href="#skill" class="navLink">Skill</a></li>
+        <li><a href="#projects" class="navLink">Project</a></li>
+        <li><a href="#Contact" class="navLink">Contact</a></li>
       </ul>
       <ul id="moblieNavUl">
         <li><i id="menuBar" class="fa-solid fa-bars"></i></i></li>
@@ -43,8 +47,10 @@
       <ul>
         <li class="MenuLiMoblie"><a href="#home">Home</a></li>
         <li class="MenuLiMoblie"><a href="#About">About</a></li>
-        <li class="MenuLiMoblie"><a href="#Contact">Contact</a></li>
+        <Li class="MenuLiMoblie"><a href="#skill">Skill</a></Li>
         <Li class="MenuLiMoblie"><a href="#projects">Project</a></Li>
+        <li class="MenuLiMoblie"><a href="#Contact">Contact</a></li>
+        
       </ul>
     </nav>
   </div>
@@ -74,11 +80,13 @@
     <section class="containerAboutSkill" id="About">
       <h1>About</h1>
       <div class="aboutMe">
-        <img src="assert\SudhangsuShekhar.png" alt="image">
+        <img src="assert\SudhangsuShekhar.png" style="width:100%" alt="image">
         <div class="myInf">
-          <label for="myName">Name:<p id="myName">Sudhangsu Shekhar Bairagi</p></label>
+          <div class="myinfLable">
+                      <label for="myName">Name:<p id="myName">Sudhangsu Shekhar Bairagi</p></label>
           <label for="myEmail">Email:<p id="myEmail">bairagisudhangsu@gmail.com</p></label>
           <label for="myPH">Phone:<p id="myPH">7029120726</p></label>
+          </div>
         </div>
       </div>
       <div class="about" >
@@ -181,7 +189,7 @@
           <div class="project-card"> <!-- Slide 1 -->
             <!-- <img src="assert/chat.png" alt="Project 1"> -->
             <img src="assert/home.png" alt="Project 1">
-            <h2>Runner (A chat application)</h2>
+            <h2>Runner</h2>
             <p>Real-time web-based chat app with user authentication built using HTML, CSS, Bootstrap, JavaScript, PHP, and MySQL </p>
             <button type="button" class="projectButton" >Check</button>
           </div>
@@ -208,7 +216,7 @@
     
 <!-- contact & feedback  -->
     <section class="contactUs" id="Contact">
-      <h1>Contact Us</h1>
+      <h1>Contact Me</h1>
       <div class="addressEmailPh">
         <div class="AEPSection">
           <i class="fa-solid fa-location-dot"></i>
@@ -255,7 +263,7 @@
         <li><i class="fa-solid fa-star"></i></li>
         <li> <a href="#projects">Projects</a> </li>
         <li><i class="fa-solid fa-star"></i></li>
-        <li> <a href="#contact">Contact me</a> </li>
+        <li> <a href="#Contact">Contact me</a> </li>
 
       </ul>
     </div>
