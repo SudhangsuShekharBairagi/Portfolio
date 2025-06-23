@@ -44,13 +44,11 @@
 
   }
   
-@media (max-width: 768px) {
+@media (max-width: 750px) {
+
   .project-card {
-    flex: 0 0 90%;
-    max-width:90%;
-    height:auto;
-    padding: 10px;
-  }
+   flex: 1 1 100%;
+   }
 
 
   .project-slider h1 {
@@ -68,12 +66,7 @@
 
 
 @media (max-width: 1200px)  {
-  .project-card {
-    flex: 0 0 90%;
-    max-width:90%;
-    height:auto;
-    padding: 10px;
-  }
+
    .aboutMe {
       flex-direction: column;
     }
