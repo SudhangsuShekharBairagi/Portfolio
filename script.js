@@ -11,6 +11,7 @@ const iconToggleSun = document.querySelector(".fa-sun");
 let navbar = document.querySelector(".navClass");
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
+const feedback = document.querySelector("feedback");
 
 // loader -----
 window.addEventListener("load", () => {
@@ -51,6 +52,7 @@ menuButton2.addEventListener("click", () => menuShowAndHide());
 
 function menuShowAndHide() {
   mobileNav.classList.toggle("show");
+   document.body.classList.toggle("no-scroll");
 }
 
 window.addEventListener("scroll", (e) => {
@@ -127,4 +129,43 @@ window.addEventListener("scroll", () => {
      
     }
   });
+
+
+
+  document.getElementById("contactForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const submitButton = document.getElementById("submit");
+
+    // Disable the button and show sending status (optional)
+    submitButton.disabled = true;
+    submitButton.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        alert("✅ Message sent successfully!");
+        form.reset(); 
+      } else {
+        alert("❌ Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      alert("⚠️ Something went wrong. Please check your internet connection.");
+    } finally {
+      // Re-enable the button and restore icon
+      submitButton.disabled = false;
+      submitButton.innerHTML = `<i class="fa-solid fa-paper-plane"></i>`;
+    }
+  });
+
+
 });
