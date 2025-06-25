@@ -121,6 +121,13 @@ body .navContainer nav ul {
 
 body .navContainer nav ul #nameWEB {
   cursor: auto;
+
+}
+body .navContainer nav ul #nameWEB img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+ 
 }
 
 body .navContainer nav ul li {

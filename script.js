@@ -1,3 +1,5 @@
+  document.addEventListener("DOMContentLoaded", () => {
+
 const navBarColor = document.getElementById("navBar");
 const menuButton = document.querySelector("#menuBar");
 const menuButton2 = document.querySelector(".menuBar2");
@@ -109,10 +111,8 @@ window.addEventListener("scroll", () => {
   timeout = setTimeout(() => {
     navbar.classList.remove("navbar-hidden");
   }, 150);
-});
 
-window.addEventListener("scroll", () => {
-  let current = "";
+   let current = "";
 
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
@@ -129,8 +129,7 @@ window.addEventListener("scroll", () => {
      
     }
   });
-
-
+});
 
   document.getElementById("contactForm").addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -165,7 +164,7 @@ window.addEventListener("scroll", () => {
       submitButton.disabled = false;
       submitButton.innerHTML = `<i class="fa-solid fa-paper-plane"></i>`;
     }
-  });
-
-
+    });
 });
+
+
