@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   /* font-family: cursive; */
-   font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 
 }
@@ -23,14 +24,15 @@
   --prog3: #057c1d;
 
   --bodyBg: #f4f7ff;
---navBg: #ffffff;
---textColor: #111;
---accentColor: #007BFF;
---typingColor:#00FF00;
+  --navBg: #ffffff;
+  --textColor: #111;
+  --accentColor: #007BFF;
+  --typingColor: #00FF00;
 
 
 }
-body.dark-mode{
+
+body.dark-mode {
   --bgcolor: rgb(255, 253, 253);
   /* --navBg: #000000; */
   /* --textColor: #ffffff; */
@@ -45,18 +47,20 @@ body.dark-mode{
   --prog3: #373736c0;
 
   --bodyBg: #111827;
---navBg: #1f2937;
---textColor: #e5e7eb;
---accentColor: #38bdf8;
---typingColor:#00FFFF;
+  --navBg: #1f2937;
+  --textColor: #e5e7eb;
+  --accentColor: #38bdf8;
+  --typingColor: #00FFFF;
 }
 
 
 .hide {
   display: none;
 }
+
 html {
-  scroll-padding-top: 80px; /* adjust this based on your navbar height */
+  scroll-padding-top: 80px;
+  /* adjust this based on your navbar height */
 }
 
 body {
@@ -65,21 +69,24 @@ body {
   position: relative;
   background-color: var(--bodyBg);
 }
+
 /* loader  */
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: none;
-            border-radius: 50%;
-            animation: loaderRoated 0.1s linear infinite;
-            position: fixed;
-            top: 50%;    
-            left: 50%;   
-            z-index: 2;   
-        }
+.loader {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  animation: loaderRoated 0.1s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+}
+
 h1 {
   font-size: 1.5em;
 }
+
 body .navContainer {
   width: 100%;
   display: flex;
@@ -98,9 +105,11 @@ body .navContainer .navClass {
   z-index: 2;
   transition: transform 0.3s ease-in-out;
 }
+
 .navbar-hidden {
   transform: translateY(-100%);
 }
+
 body .navContainer nav.shadow {
   box-shadow: 0px 0px 25px 1px black;
 
@@ -123,11 +132,12 @@ body .navContainer nav ul #nameWEB {
   cursor: auto;
 
 }
+
 body .navContainer nav ul #nameWEB img {
   width: 100px;
   height: 100px;
   object-fit: contain;
- 
+
 }
 
 body .navContainer nav ul li {
@@ -140,16 +150,19 @@ a {
   text-decoration: none;
   color: var(--textColor);
 }
+
 #toggle-btn {
   background: transparent;
   border: none;
 }
+
 #toggle-btn i {
   font-size: 20px;
   background: transparent;
   color: var(--textColor);
   cursor: pointer;
 }
+
 body .navContainer nav ul #navBar {
   width: 25px;
   height: 25px;
@@ -218,6 +231,7 @@ body .navContainer nav ul #navBar:hover::before {
   transform: scaleX(1);
   transform-origin: left;
 }
+
 .navLink.active {
   color: rgb(33, 177, 255);
 
@@ -284,9 +298,10 @@ body .navContainer nav ul #navBar:hover::before {
 
 #moblieNavUl {
   display: none;
-  
+
 }
-#moblieNavUl ul{
+
+#moblieNavUl ul {
   text-align: center;
 }
 
@@ -325,14 +340,16 @@ body .navContainer nav ul #navBar:hover::before {
   /* Return to original position */
   transition-delay: 1s;
 }
-#mobileNav{
- display: flex;
- justify-content: center;
- border-radius: none;
+
+#mobileNav {
+  display: flex;
+  justify-content: center;
+  border-radius: none;
 }
+
 #mobileNav ul li {
   cursor: pointer;
-  
+
 }
 
 #mobileNav ul li:hover {
@@ -353,7 +370,7 @@ body .navContainer nav ul #navBar:hover::before {
 .MainBodyContainer {
   width: 100%;
   padding-top: 70px;
-  
+
 }
 
 .MainBodyContainer .home {
@@ -398,14 +415,18 @@ body .navContainer nav ul #navBar:hover::before {
 .typingAnimation {
   white-space: wrap;
   overflow: hidden;
-  border-right: 2px solid #00ff00 ;
+  border-right: 2px solid #00ff00;
   width: fit-content;
   color: var(--typingColor);
   animation: blink 0.7s step-end infinite;
 }
+
 @keyframes blink {
-  50% {border-color: transparent;}  
+  50% {
+    border-color: transparent;
+  }
 }
+
 .MainBodyContainer .home .homePic {
   flex: 1;
   height: 300px;
@@ -435,43 +456,53 @@ body .navContainer nav ul #navBar:hover::before {
   padding: 10px;
   font-size: 2rem;
 }
+
 .socialMedia a i {
   margin: 4px;
   border-radius: 10%;
 }
-.face i:hover{
- color: #1877F2;
+
+.face i:hover {
+  color: #1877F2;
 }
+
 .beforeIn i:hover {
- background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100% );
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
- background-clip: text;
- /* text-fill-color:transparent; */
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* text-fill-color:transparent; */
 }
-.linkedin i:hover{
+
+.linkedin i:hover {
   color: #0077B5;
 }
-.face::before{
+
+.face::before {
   content: "Facebook";
   top: 2px;
   right: 40px;
 }
-.beforeIn::before{
+
+.beforeIn::before {
   content: "Instagram";
   top: 45px;
   right: 40px;
 }
+
 .linkedin::before {
   content: "Linkedin";
   top: 95px;
   right: 40px;
 }
-.face::before, .beforeIn::before, .linkedin::before{
+
+.face::before,
+.beforeIn::before,
+.linkedin::before {
   font-size: 12px;
   color: white;
   background-color: black;
-  position:absolute;
+  position: absolute;
   z-index: 1;
   padding: 3px;
   border-radius: 5px;
@@ -480,10 +511,13 @@ body .navContainer nav ul #navBar:hover::before {
   transform: translateY(-5px);
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
-.face:hover::before, .beforeIn:hover::before, .linkedin:hover::before {
+
+.face:hover::before,
+.beforeIn:hover::before,
+.linkedin:hover::before {
   opacity: 1;
-  visibility: visible; 
-  transform: translateY(0); 
+  visibility: visible;
+  transform: translateY(0);
   /* transition-delay: 1s; */
 }
 
@@ -500,7 +534,8 @@ body .navContainer nav ul #navBar:hover::before {
   /* background-color: aqua; */
 }
 
-.containerAboutSkill h1,.contactUs h1 {
+.containerAboutSkill h1,
+.contactUs h1 {
   grid-column: 1/3;
   color: var(--textColor);
 }
@@ -517,22 +552,26 @@ body .navContainer nav ul #navBar:hover::before {
   animation-timeline: view();
   animation-range: entry;
 }
+
 .about p {
-    font-size: rem;
+  font-size: rem;
 }
+
 .aboutMe {
   margin: 20px;
   position: relative;
   width: 90%;
   /* height: 300px; */
- 
+
 }
+
 .aboutMe img {
   display: block;
   width: 100%;
   height: 300px;
   border-radius: 10px;
 }
+
 .myInf {
   position: absolute;
   bottom: 100%;
@@ -547,14 +586,14 @@ body .navContainer nav ul #navBar:hover::before {
 
 }
 
-.aboutMe:hover .myInf{
-bottom: 0;
+.aboutMe:hover .myInf {
+  bottom: 0;
   height: 100%;
 }
 
 
 .myInf .myinfLable {
-   white-space: nowrap; 
+  white-space: nowrap;
   color: white;
   font-size: 20px;
   position: absolute;
@@ -565,7 +604,7 @@ bottom: 0;
   -ms-transform: translate(-50%, -50%);
 }
 
-.containerAboutSkill #downloadCv{
+.containerAboutSkill #downloadCv {
 
   flex: 1;
   display: flex;
@@ -582,7 +621,9 @@ bottom: 0;
   animation-range: entry;
 }
 
-.containerAboutSkill #downloadCv #downloadButton, .feedback #submit,.project-section .project-container .projectButton{
+.containerAboutSkill #downloadCv #downloadButton,
+.feedback #submit,
+.project-section .project-container .projectButton {
   width: 100px;
   height: 40px;
   display: flex;
@@ -596,10 +637,16 @@ bottom: 0;
   color: #000000;
   border: none;
 }
-.containerAboutSkill #downloadCv #downloadButton:hover, .feedback #submit:hover, .project-section .project-container .projectButton:hover{
+
+.containerAboutSkill #downloadCv #downloadButton:hover,
+.feedback #submit:hover,
+.project-section .project-container .projectButton:hover {
   background-color: #25fc50;
 }
-.containerAboutSkill #downloadCv #downloadButton:active, .feedback #submit:active, .project-section .project-container .projectButton:active{
+
+.containerAboutSkill #downloadCv #downloadButton:active,
+.feedback #submit:active,
+.project-section .project-container .projectButton:active {
   transform: translateY(5px);
 }
 
@@ -608,7 +655,8 @@ bottom: 0;
 
 /* skill  */
 
-.skillSection, .contactUs {
+.skillSection,
+.contactUs {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -647,7 +695,7 @@ bottom: 0;
   width: 100%;
   height: auto;
   /* background-color: rebeccapurple; */
- margin-bottom: 5px;
+  margin-bottom: 5px;
 
   /* overflow: hidden; */
   position: relative;
@@ -674,23 +722,24 @@ bottom: 0;
   height: 20px;
   font-size: 0.7em;
   position: absolute;
-  background: linear-gradient(90deg, var(--prog1),var(--prog2), var(--prog3));
+  background: linear-gradient(90deg, var(--prog1), var(--prog2), var(--prog3));
   font-weight: bold;
-  border-radius: 15px; 
+  border-radius: 15px;
   z-index: 0;
   /* padding-left: 10px; */
   animation: Progress 1s linear;
   animation-timeline: view();
   /* animation-range: ; */
   animation-range-end: entry 70px;
-  
+
   /* box-shadow: 5px 0px 5px rgb(2, 119, 2); */
 }
-.skillSection .concept .progress .progressBar .ProgresPercentage{
+
+.skillSection .concept .progress .progressBar .ProgresPercentage {
   /* width: var(--barWidth); */
-   width: var(--barWidth);
+  width: var(--barWidth);
   text-align: end;
-  position: absolute; 
+  position: absolute;
   font-size: 0.9em;
   font-weight: bold;
   color: #0a2efc;
@@ -699,50 +748,56 @@ bottom: 0;
   animation-timeline: view();
   /* animation-range: ; */
   animation-range-end: entry 70px;
-  
+
 }
 
 
 /* contact us */
-.contactUs .addressEmailPh{
+.contactUs .addressEmailPh {
   /* margin: 1em; */
   display: flex;
   flex-direction: column;
   /* padding: 10px;   */
 }
+
 .contactUs .addressEmailPh {
 
   display: flex;
   flex-direction: column;
-  
+
   justify-content: space-between;
   /* background-color: aquamarine; */
   padding: 20px;
 }
-.contactUs .addressEmailPh .AEPSection{
- display: flex;
- align-items: center;
- margin: 20px 0px 20px 0px;
- animation: myAni linear;
- animation-timeline: view();
- animation-range: entry;
+
+.contactUs .addressEmailPh .AEPSection {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px 20px 0px;
+  animation: myAni linear;
+  animation-timeline: view();
+  animation-range: entry;
 
 }
-.contactUs .addressEmailPh .AEPSection i{
+
+.contactUs .addressEmailPh .AEPSection i {
   font-size: 26px;
   margin-right: 30px;
 }
-.contactUs .feedback{
+
+.contactUs .feedback {
   display: flex;
   flex-direction: column;
   /* margin: 1em; */
   padding: 20px;
-  align-items: center; 
+  align-items: center;
 
 
   /* justify-content: center; */
 }
-.contactUs .feedback input[type ="text"],.contactUs .feedback textarea{
+
+.contactUs .feedback input[type="text"],
+.contactUs .feedback textarea {
   width: 100%;
   height: 40px;
   border-radius: 10px;
@@ -754,34 +809,36 @@ bottom: 0;
   animation-timeline: view();
   animation-range: entry;
 }
-.contactUs .feedback #submit{
-   box-shadow: 0 2px 5px black;
-   border: none;
-   animation: myAni linear;
-   animation-timeline: view();
-   animation-range: entry;
+
+.contactUs .feedback #submit {
+  box-shadow: 0 2px 5px black;
+  border: none;
+  animation: myAni linear;
+  animation-timeline: view();
+  animation-range: entry;
 }
 
 
- /* prject-selectio */
+/* prject-selectio */
 
-.project-section {  
+.project-section {
   /* width: 100%; */
   /* background-color: var(--navBg);
   text-align: center;
   padding-bottom: 30px; */
-   background-color: var(--navBg);
+  background-color: var(--navBg);
 }
 
 .project-container {
   display: flex;
   flex-wrap: wrap;
   /* flex-direction: column; */
-    /* align-items: center;
+  /* align-items: center;
     justify-content: center; */
   gap: 16px;
   padding: 20px;
 }
+
 .project-card {
   flex: 1 1 35%;
   /* max-width: 35%; */
@@ -800,8 +857,8 @@ bottom: 0;
   /* display: flex; */
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 
   animation: myAni linear;
   animation-timeline: view();
@@ -820,7 +877,7 @@ bottom: 0;
   object-fit: contain;
   border-radius: 12px;
   margin-bottom: 1rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .project-card h2 {
@@ -846,45 +903,55 @@ footer {
   justify-content: center;
   align-items: center;
 
-  
+
   background: linear-gradient(45deg, #1f2937, #111827);
   color: white;
 }
- footer h1 {
+
+footer h1 {
   color: white;
   padding-top: 20px;
- }
+}
+
 .goToHASPC {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+
 .mediaLink {
   height: 60px;
   display: flex;
   gap: 25px;
   align-items: center;
 }
+
 .mediaLink a i {
-  transition:  scale 0.3s linear;
+  transition: scale 0.3s linear;
   color: white;
 }
-.mediaLink a i:hover{
+
+.mediaLink a i:hover {
   scale: 2;
 }
-.goToHASPC i{
+
+.goToHASPC i {
   font-size: 0.5em;
 }
+
 .footerUl {
   display: flex;
   gap: 10px;
 }
+
 #footerUl li {
   position: relative;
   overflow: hidden;
 }
-#footerUl li a, #footerUl li i {
-color: white;
+
+#footerUl li a,
+#footerUl li i {
+  color: white;
 }
 
 #footerUl li a:hover {
@@ -914,8 +981,9 @@ section {
   text-align: center;
   padding-bottom: 30px;
 }
+
 section h1 {
-   color: var(--textColor);
+  color: var(--textColor);
   /* margin: 1em; */
   padding-top: 20px;
 }
