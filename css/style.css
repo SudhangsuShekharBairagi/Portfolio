@@ -23,12 +23,14 @@
   --prog2: #25fc50;
   --prog3: #057c1d;
 
-  --bodyBg: #f4f7ff;
-  --navBg: #ffffff;
+  --bodyBg: #FBFBFB;
+  --navBg: #E8F9FF;
   --textColor: #111;
   --accentColor: #007BFF;
   --typingColor: #00FF00;
-
+  --card-color: #7cc9fc00;
+/* 4682A9
+749BC2 */
 
 }
 
@@ -51,6 +53,7 @@ body.dark-mode {
   --textColor: #e5e7eb;
   --accentColor: #38bdf8;
   --typingColor: #00FFFF;
+    --card-color: #7cc9fc04;
 }
 
 
@@ -68,19 +71,36 @@ body {
   height: 100vh;
   position: relative;
   background-color: var(--bodyBg);
+  
 }
 
 /* loader  */
+  body.loading {
+        overflow: hidden;
+        height: 100%;
+  }
+.loaderContainer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: #0b0f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
 .loader {
   width: 50px;
   height: 50px;
   border: none;
   border-radius: 50%;
   animation: loaderRoated 0.1s linear infinite;
-  position: fixed;
+  
   top: 50%;
   left: 50%;
   z-index: 2;
+ 
 }
 
 h1 {
@@ -250,8 +270,8 @@ body .navContainer nav ul #navBar:hover::before {
   /* Hidden state */
   transition: transform 0.5s linear;
   /* Smooth slide */
-  z-index: 2;
-
+  z-index: 999;
+  overflow-y: auto;
 }
 
 #mobileNav ul {
@@ -273,6 +293,10 @@ body .navContainer nav ul #navBar:hover::before {
 #mobileNav.show {
   transform: translateY(0);
   /* Visible state */
+}
+.no-scroll {
+  /* overflow: hidden; */
+  height: 100vh;
 }
 
 .menuBar2 {
@@ -526,10 +550,11 @@ body .navContainer nav ul #navBar:hover::before {
 .containerAboutSkill {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 3fr;
   color: var(--textColor);
   background-color: var(--navBg);
   padding-bottom: 30px;
+  align-items: center;
 
   /* background-color: aqua; */
 }
@@ -569,40 +594,10 @@ body .navContainer nav ul #navBar:hover::before {
   display: block;
   width: 100%;
   height: 300px;
-  border-radius: 10px;
-}
-
-.myInf {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  background-color: #008CBA;
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: .5s ease;
-  border-radius: 10px;
-
-}
-
-.aboutMe:hover .myInf {
-  bottom: 0;
-  height: 100%;
+  border-radius: 50%;
 }
 
 
-.myInf .myinfLable {
-  white-space: nowrap;
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
 
 .containerAboutSkill #downloadCv {
 
@@ -620,10 +615,11 @@ body .navContainer nav ul #navBar:hover::before {
   animation-timeline: view();
   animation-range: entry;
 }
-
 .containerAboutSkill #downloadCv #downloadButton,
 .feedback #submit,
-.project-section .project-container .projectButton {
+.project-section .project-container .project-card .projectButton {
+  position: relative;
+  overflow: hidden;
   width: 100px;
   height: 40px;
   display: flex;
@@ -632,26 +628,82 @@ body .navContainer nav ul #navBar:hover::before {
   background-color: #fcf8f8;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgb(79, 79, 79);
-  position: relative;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  color: #000000;
+  color: #000;
   border: none;
-}
+  transition: background-color 0.3s ease, transform 0.3s ease,box-shadow 0.2s ease-in;
 
+
+}
 .containerAboutSkill #downloadCv #downloadButton:hover,
 .feedback #submit:hover,
-.project-section .project-container .projectButton:hover {
-  background-color: #25fc50;
+.project-section .project-container .project-card .projectButton:hover {
+  /* background-color: #25fc50; */
+   box-shadow: 0 0 10px var(--accentColor), 0 0 20px var(--accentColor);
+}
+
+.containerAboutSkill #downloadCv #downloadButton::before,
+.feedback #submit::before,
+.project-section .project-container .project-card .projectButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 157, 0.25);
+ 
+
+  transform: scale(0);
+  border-radius: 10px;
+  z-index: 0;
+  transition: transform 0.3s ease, color 2s ease-in-out;
 }
 
 .containerAboutSkill #downloadCv #downloadButton:active,
 .feedback #submit:active,
-.project-section .project-container .projectButton:active {
+.project-section .project-container .project-card .projectButton:active {
   transform: translateY(5px);
+  color: #05257c;
 }
 
+.containerAboutSkill #downloadCv #downloadButton:active::before,
+.feedback #submit:active::before,
+.project-section .project-container .project-card .projectButton:active::before {
+  transform: scale(1);
+ 
+}
 
+.containerAboutSkill #downloadCv #downloadButton span,
+.feedback #submit span,
+.project-section .project-container .project-card .projectButton span {
+  position: relative;
+  z-index: 1;
+}
+#downloadButton span{
+  /* position: absolute; */
+  /* overflow: hidden; */
+    
+  
 
+}
+ #downloadButton span i { 
+  font-size: x-large;
+  top: 30%;
+  left: 35%;
+  position: absolute;
+  transition: transform 0.2s ease-in;
+  transform: translateY(-50px);  
+}
+ #downloadButton:hover span i {
+  transform: translateY(-6px);
+ }
+  #downloadButton span p { 
+
+  transition: transform 0.2s ease-in;
+}
+ #downloadButton:hover span p {
+  transform: translateY(40px);
+ }
 
 /* skill  */
 
@@ -726,6 +778,7 @@ body .navContainer nav ul #navBar:hover::before {
   font-weight: bold;
   border-radius: 15px;
   z-index: 0;
+
   /* padding-left: 10px; */
   animation: Progress 1s linear;
   animation-timeline: view();
@@ -842,7 +895,7 @@ body .navContainer nav ul #navBar:hover::before {
 .project-card {
   flex: 1 1 35%;
   /* max-width: 35%; */
-  height: 400px;
+  height: 500px;
   /* background-color: var(--bodyBg); */
   border-radius: 10px;
   padding: 20px;
@@ -855,18 +908,17 @@ body .navContainer nav ul #navBar:hover::before {
   justify-content: space-evenly;
   text-align: justify;
   /* display: flex; */
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--card-color);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-
+  transition: transform 1s ease-in-out,box-shadow 1s ease-in-out;
   animation: myAni linear;
   animation-timeline: view();
   animation-range: entry;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+.project-card:hover { 
   box-shadow: 0 0 10px var(--accentColor), 0 0 20px var(--accentColor);
   /* box-shadow: 0 15px 40px var(--shadowColor); */
 }
@@ -912,12 +964,11 @@ footer h1 {
   color: white;
   padding-top: 20px;
 }
-
-.goToHASPC {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+#copyRight {
+  margin: 20px;
+  text-align: center;
 }
+
 
 .mediaLink {
   height: 60px;
@@ -935,46 +986,8 @@ footer h1 {
   scale: 2;
 }
 
-.goToHASPC i {
-  font-size: 0.5em;
-}
 
-.footerUl {
-  display: flex;
-  gap: 10px;
-}
 
-#footerUl li {
-  position: relative;
-  overflow: hidden;
-}
-
-#footerUl li a,
-#footerUl li i {
-  color: white;
-}
-
-#footerUl li a:hover {
-  transition: 0.3s linear;
-  color: hsl(117, 91%, 51%);
-}
-
-#footerUl li::before {
-  position: absolute;
-  bottom: 0px;
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: hsl(117, 91%, 51%);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease-out;
-}
-
-#footerUl li:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
 
 section {
   /* background-color: var(--navBg); */
@@ -987,3 +1000,25 @@ section h1 {
   /* margin: 1em; */
   padding-top: 20px;
 }
+
+/* Go to top Button */
+
+#goToTop {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 30%;
+  background-color: rgb(255, 132, 0);
+  border: none;
+  cursor: pointer;
+ transition: transform 0.4s ease-in-out;
+}
+.hideGoToButton {
+transform: translateY(100px);
+}
+#goToTop:hover {
+    box-shadow: 0 0 10px var(--accentColor), 0 0 20px var(--accentColor);
+}
+

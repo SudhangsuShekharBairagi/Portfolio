@@ -35,12 +35,7 @@
       justify-content: space-evenly;
       flex-direction: column;
     }
-    .footerUl {
-      flex-direction: column;
-      list-style: none;
-      justify-content: center;
-      align-items: center;
-    }
+
 
   }
   
