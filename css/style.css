@@ -150,7 +150,9 @@ body .navContainer nav ul {
 
 body .navContainer nav ul #nameWEB {
   cursor: auto;
-
+  align-content: center;
+  margin: 5px;
+  padding-top: 7px;
 }
 
 body .navContainer nav ul #nameWEB img {
@@ -704,6 +706,7 @@ body .navContainer nav ul #navBar:hover::before {
  #downloadButton:hover span p {
   transform: translateY(40px);
  }
+
 
 /* skill  */
 
