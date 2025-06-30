@@ -2,57 +2,55 @@
   .MainBodyContainer .home {
     flex-direction: column;
   }
-    #moblieNavUl {
-      display: block;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    #PCNavUl {
-      display: none;
-    }
-    .containerAboutSkill, .contactUs{
-      display: flex;
-      flex-direction: column;
-    }
-    .aboutMe {
-      flex-direction: column; 
-    }
-    .aboutMe img{
-      width: 100%;
-      height: 250px;
-      /* background-color: red; */
-      z-index: 0;
-    }
-    .aboutMe .myInf {
-       display: flex;
-       align-items: center;
-       gap: 10px;
-    }
-    .skill{
-      width: auto;
-    }
-    .skillSection{
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
-    }
-.contactUs .addressEmailPh .AEPSection {
-  flex-direction: row;
-  text-align: start;
-  text-wrap: wrap;
-  font-size: 1em;
+  #moblieNavUl {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #PCNavUl {
+    display: none;
+  }
+  .containerAboutSkill,
+  .contactUs {
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutMe {
+    flex-direction: column;
+  }
+  .aboutMe img {
+    width: 100%;
+    height: 250px;
+    /* background-color: red; */
+    z-index: 0;
+  }
+  .aboutMe .myInf {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .skill {
+    width: auto;
+  }
+  .skillSection {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .contactUs .addressEmailPh .AEPSection {
+    flex-direction: row;
+    text-align: start;
+    text-wrap: wrap;
+    font-size: 1em;
+  }
 }
 
-  }
-  
 @media (max-width: 750px) {
-
   .project-card {
-   flex: 1 1 100%;
-   }
-
+    flex: 1 1 100%;
+  }
 
   .project-slider h1 {
     font-size: 2rem;
@@ -67,21 +65,19 @@
   }
 }
 
-
-@media (max-width: 1200px)  {
-
-   .aboutMe {
-      flex-direction: column;
-    }
-    .aboutMe img{
-      width: 100%;
-      height: 250px;
-      /* background-color: red; */
-      z-index: 0;
-    }
-    .aboutMe .myInf {
-       display: flex;
-       align-items: center;
-       gap: 10px;
-    }
+@media (max-width: 1200px) {
+  .aboutMe {
+    flex-direction: column;
+  }
+  .aboutMe img {
+    width: 100%;
+    height: 250px;
+    /* background-color: red; */
+    z-index: 0;
+  }
+  .aboutMe .myInf {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
