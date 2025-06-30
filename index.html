@@ -21,7 +21,9 @@
   <link rel="stylesheet" href="css/mediaScreen.css" />
 </head>
 
-<body class="loading">
+<body>
+
+
   <!-- loader -->
   <div class="loaderContainer">
     <div class="loader"></div>
@@ -40,7 +42,7 @@
         <li><a href="#skill" class="navLink"><i class="fas fa-lightbulb"></i> Skills</a></li>
         <li><a href="#projects" class="navLink"><i class="fas fa-diagram-project"></i> Projects</a></li>
         <li><a href="#Contact" class="navLink"><i class="fas fa-envelope"></i> Contact
-</a></li>
+          </a></li>
       </ul>
       <ul id="moblieNavUl">
         <li><i id="menuBar" class="fa-solid fa-bars"></i></i></li>
@@ -91,10 +93,10 @@
 
       <div class="aboutMe">
 
-        <img loading="lazy" src="assert\SudhangsuShekhar.png" style="width:100%" alt="image">
+        <img class="aboutImg" loading="lazy" src="assert\SudhangsuShekhar.png" style="width:100%" alt="image">
 
       </div>
-      
+
       <div class="about">
 
         <p>I'm a BCA student passionate about coding and web development. My expertise lies in JavaScript,
@@ -106,13 +108,15 @@
         <p>
           In my free time, I enjoy learning new technologies and staying updated on current affairs. Feel free to
           connect with me to discuss potential opportunities or collaborations!</p>
-      <span id="downloadCv">
-        
-        <a id="downloadButton" href="assert\SudhangsuShekharBairagiResuma.pdf" download="Resume.pdf" ><span> <p> Resume</p> <i class="fa-solid fa-download"></i> </span></a>
-      </span>
+        <span id="downloadCv">
+
+          <a id="downloadButton" href="assert\SudhangsuShekharBairagiResuma.pdf" download="Resume.pdf"><span>
+              <p> Resume</p> <i class="fa-solid fa-download"></i>
+            </span></a>
+        </span>
 
       </div>
-    
+
     </section>
     <!-- skill  -->
     <section class="skillSection" id="skill">
@@ -184,44 +188,46 @@
             <span class="ProgresPercentage">88%</span>
           </div>
         </div>
+        <div>
 
+        </div>
     </section>
 
     <section id="projects" class="project-section">
       <h1>My Projects</h1>
       <div class="project-container">
 
-        <div class="project-card"> 
-          <img loading="lazy" src="assert/home.png" alt="Project 1">
+        <div class="project-card">
+          <video src="assert/Chat-App-Video.mp4" type="video/mp4" loop  autoplay playsinline muted>  Your browser does not support the video tag.</video>
           <h2>Runner</h2>
           <p>Real-time web-based chat app with user authentication built using HTML, CSS, Bootstrap, JavaScript, PHP,
             and MySQL </p>
-          <button type="button" class="projectButton"><span>Check</span></button>
+          <button type="button" class="projectButton"><span id="demo">DEMO</span> <span id="live"><i class="fa-solid fa-laptop"></i><i class="fa-solid fa-mobile-screen-button"></i></span></button>
         </div>
 
         <div class="project-card">
-          <img loading="lazy" src="assert/IMAGE.png" alt="Project 2">
+         <video src="assert/Grame-Video.mp4" type="video/mp4" loop  autoplay playsinline muted></video>
           <h2>Tic-Tac-Toe Game </h2>
           <p>A two-player web-based game with interactive UI using HTML, CSS, JavaScript</p>
-         <button type="button" class="projectButton"><span>Check</span></button>
+              <button type="button" class="projectButton"><span id="demo">DEMO</span> <span id="live"><i class="fa-solid fa-laptop"></i><i class="fa-solid fa-mobile-screen-button"></i></span></button>
         </div>
 
-        <div class="project-card"> 
-          <img loading="lazy" src="assert/Calculator-Image copy.png" alt="Project 1">
+        <div class="project-card">
+          <video src="assert/Simple-Calculator-video.mp4" type="video/mp4" loop  autoplay playsinline muted></video>
           <h2>Simple Calculator</h2>
           <p>A simple calculator application built using HTML, CSS, JavaScript.</p>
-          <button type="button" class="projectButton"><span>Check</span></button>
+             <button type="button" class="projectButton"><span id="demo">DEMO</span> <span id="live"><i class="fa-solid fa-laptop"></i><i class="fa-solid fa-mobile-screen-button"></i></span></button>
         </div>
 
-        <div class="project-card">          
-          <img loading="lazy" src="https://picsum.photos/300/200?blur=5" alt="Comming soon">
+        <div class="project-card">
+          <img loading="lazy" src="" alt="Comming soon">
           <h2>Restaurant Management System</h2>
           <p>This project is under development. Stay tuned!</p>
           <span class="coming-soon-badge">Coming Soon</span>
         </div>
 
-        <div class="project-card">          
-          <img loading="lazy" src="https://picsum.photos/300/200?blur=5" alt="Comming soon">
+        <div class="project-card">
+          <img loading="lazy" src="" alt="Comming soon">
           <h2>Upcoming Project</h2>
           <p>This project is under development. Stay tuned!</p>
           <span class="coming-soon-badge">Coming Soon</span>
@@ -256,9 +262,9 @@
         <!-- <input type="text" name="subject" id="subject" placeholder="Subject"> -->
         <textarea name="message" id="massage" placeholder="Message" maxlength="1000" style="resize: none; height: 60px;"
           required></textarea>
-        <button type="submit" id="submit"><span><i class="fa-solid fa-paper-plane"></i></span></button>
+        <button type="submit" id="submit"><span id="SendDemo">SEND</span><i id="sendSym" class="fa-solid fa-paper-plane"></i></button>
       </form>
-      
+
     </section>
 
   </div>
@@ -279,7 +285,7 @@
 
   </footer>
 
-    <button id="goToTop"><i class="fa-solid fa-arrow-up"></i></button>
+  <button id="goToTop"><i class="fa-solid fa-arrow-up"></i></button>
 
   <script src="script.js"></script>
 </body>

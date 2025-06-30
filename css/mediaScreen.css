@@ -14,7 +14,7 @@
       flex-direction: column;
     }
     .aboutMe {
-      flex-direction: column;
+      flex-direction: column; 
     }
     .aboutMe img{
       width: 100%;
@@ -35,7 +35,12 @@
       justify-content: space-evenly;
       flex-direction: column;
     }
-
+.contactUs .addressEmailPh .AEPSection {
+  flex-direction: row;
+  text-align: start;
+  text-wrap: wrap;
+  font-size: 1em;
+}
 
   }
   

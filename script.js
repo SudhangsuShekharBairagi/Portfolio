@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
+// menu button show or hide
 
   MenuLiMoblie.forEach((element) => {
     element.addEventListener("click", () => menuShowAndHide());
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.remove("shadow");
     }
   });
-
+// typing effect 
   const texts = ["Web Developer", "Tech Enthusiast", "Open Source Contributor"];
   const typeSpeed = 150;
   const delayAfterTyping = 2000;
@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+//scroll effect 
   let lastScrollTop = 0;
  
   window.addEventListener("scroll", () => {
@@ -112,7 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      console.log(sectionTop + " " + sectionHeight + " " + pageYOffset);
+      if (pageYOffset + 150 >= sectionTop) {
         current = section.getAttribute("id");
       }
     });
@@ -120,13 +122,14 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.remove("active");
 
       if (link.getAttribute("href") === "#" + current) {
+      
         link.classList.add("active");
 
       }
     });
 
 
-    if (window.pageYOffset > 300) {
+    if (window.pageYOffset > 200) {
   document.getElementById("goToTop").classList.remove("hideGoToButton");
 } else {
   document.getElementById("goToTop").classList.add("hideGoToButton");
@@ -172,6 +175,27 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("home").scrollIntoView({ behavior: "smooth" });
 });
   
+// about section image move 
+  const container = document.querySelector('.aboutMe');
+  const image = document.querySelector('.aboutImg');
+
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left; // x position within container
+    const y = e.clientY - rect.top;  // y position within container
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -20; // max 10deg tilt
+    const rotateY = ((x - centerX) / centerX) * 20;
+
+    image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    image.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  });
 });
 
 
