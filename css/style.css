@@ -402,6 +402,7 @@ body .navContainer nav ul #navBar:hover::before {
 
 .MainBodyContainer {
   width: 100%;
+  height: auto;
   padding-top: 70px;
 
 }
@@ -432,7 +433,7 @@ body .navContainer nav ul #navBar:hover::before {
 
 .MainBodyContainer .home .homeName {
   flex: 1;
-  height: 300px;
+  height: auto;
   /* background-color: red; */
   display: flex;
   justify-content: center;
@@ -642,7 +643,7 @@ body .navContainer nav ul #navBar:hover::before {
 
 .containerAboutSkill #downloadCv #downloadButton,
 .feedback #submit,
-.project-section .project-container .project-card .projectButton {
+.project-section .project-container .project-card .projectButton, #hireMeButton {
   position: relative;
   overflow: hidden;
   width: 100px;
@@ -662,14 +663,14 @@ body .navContainer nav ul #navBar:hover::before {
 
 .containerAboutSkill #downloadCv #downloadButton:hover,
 .feedback #submit:hover,
-.project-section .project-container .project-card .projectButton:hover {
+.project-section .project-container .project-card .projectButton:hover, #hireMeButton:hover {
   /* background-color: #25fc50; */
   box-shadow: 0 0 10px var(--accentColor), 0 0 20px var(--accentColor);
 }
 
 .containerAboutSkill #downloadCv #downloadButton::before,
 .feedback #submit::before,
-.project-section .project-container .project-card .projectButton::before {
+.project-section .project-container .project-card .projectButton::before,#hireMeButton::before  {
   content: "";
   position: absolute;
   top: 0;
@@ -687,21 +688,21 @@ body .navContainer nav ul #navBar:hover::before {
 
 .containerAboutSkill #downloadCv #downloadButton:active,
 .feedback #submit:active,
-.project-section .project-container .project-card .projectButton:active {
+.project-section .project-container .project-card .projectButton:active, #hireMeButton:active {
   transform: translateY(5px);
   color: #05257c;
 }
 
 .containerAboutSkill #downloadCv #downloadButton:active::before,
 .feedback #submit:active::before,
-.project-section .project-container .project-card .projectButton:active::before {
+.project-section .project-container .project-card .projectButton:active::before, #hireMeButton:active {
   transform: scale(1);
 
 }
 
 .containerAboutSkill #downloadCv #downloadButton span,
 .feedback #submit span,
-.project-section .project-container .project-card .projectButton span {
+.project-section .project-container .project-card .projectButton span, #hireMeButton span{
   position: relative;
   z-index: 1;
 }
@@ -721,12 +722,12 @@ body .navContainer nav ul #navBar:hover::before {
   transform: translateY(-6px);
 }
 
-#downloadButton span p {
+#downloadButton span h4 {
 
   transition: transform 0.2s ease-in;
 }
 
-#downloadButton:hover span p {
+#downloadButton:hover span h4 {
   transform: translateY(40px);
 }
 
@@ -976,18 +977,19 @@ body .navContainer nav ul #navBar:hover::before {
   color: var(--textColor);
   opacity: 0.8;
 }
-#demo, #SendDemo {
+#demo, #SendDemo,#hireMeButton #hireText{
  transition: transform 0.2s ease-in;
 }
-#live,#sendSym {
+#live,#sendSym,#hireMeButton i {
+  font-size: x-large;
   position: absolute;
-  top: -20px;
+  top: -30px;
   transition: transform 0.2s ease-in;
 }
-.projectButton:hover #live, #submit:hover #sendSym {
-  transform: translateY(30px);
+.projectButton:hover #live, #submit:hover #sendSym, #hireMeButton:hover i {
+  transform: translateY(40px);
 }
-.projectButton:hover #demo, #submit:hover #SendDemo {
+.projectButton:hover #demo, #submit:hover #SendDemo, #hireMeButton:hover #hireText {
    transform: translateY(30px);
 }
 

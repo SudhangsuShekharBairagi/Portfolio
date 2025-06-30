@@ -1,4 +1,7 @@
 @media (max-width: 750px) {
+  .MainBodyContainer .home {
+    flex-direction: column;
+  }
     #moblieNavUl {
       display: block;
       display: flex;
