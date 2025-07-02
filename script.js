@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      console.log(sectionTop + " " + sectionHeight + " " + pageYOffset);
+   
       if (pageYOffset + 150 >= sectionTop) {
         current = section.getAttribute("id");
       }
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * -20; // max 10deg tilt
+    const rotateX = ((y - centerY) / centerY) * -20; // max 20deg tilt
     const rotateY = ((x - centerX) / centerX) * 20;
 
     image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
