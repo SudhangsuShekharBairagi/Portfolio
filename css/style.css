@@ -632,7 +632,7 @@ body .navContainer nav ul #navBar:hover::before {
 }
 
 .containerAboutSkill #downloadCv #downloadButton,
-.feedback #submit,
+.contactUs .feedback #submit,
 .project-section .project-container .project-card .projectButton,
 #hireMeButton {
   position: relative;
@@ -652,7 +652,7 @@ body .navContainer nav ul #navBar:hover::before {
 }
 
 .containerAboutSkill #downloadCv #downloadButton:hover,
-.feedback #submit:hover,
+.contactUs .feedback #submit:hover,
 .project-section .project-container .project-card .projectButton:hover,
 #hireMeButton:hover {
   /* background-color: #25fc50; */
@@ -660,7 +660,7 @@ body .navContainer nav ul #navBar:hover::before {
 }
 
 .containerAboutSkill #downloadCv #downloadButton::before,
-.feedback #submit::before,
+.contactUs .feedback #submit::before,
 .project-section .project-container .project-card .projectButton::before,
 #hireMeButton::before {
   content: "";
@@ -678,7 +678,7 @@ body .navContainer nav ul #navBar:hover::before {
 }
 
 .containerAboutSkill #downloadCv #downloadButton:active,
-.feedback #submit:active,
+.contactUs .feedback #submit:active,
 .project-section .project-container .project-card .projectButton:active,
 #hireMeButton:active {
   transform: translateY(5px);
@@ -686,15 +686,14 @@ body .navContainer nav ul #navBar:hover::before {
 }
 
 .containerAboutSkill #downloadCv #downloadButton:active::before,
-.feedback #submit:active::before,
+.contactUs .feedback #submit:active::before,
 .project-section .project-container .project-card .projectButton:active::before,
 #hireMeButton:active {
   transform: scale(1);
 }
 
 .containerAboutSkill #downloadCv #downloadButton span,
-.feedback #submit span,
-.project-section .project-container .project-card .projectButton span,
+.contactUs .feedback #submit span,
 #hireMeButton span {
   position: relative;
   z-index: 1;
@@ -702,7 +701,7 @@ body .navContainer nav ul #navBar:hover::before {
 #downloadButton {
   font-size: 0.9em;
 }
-#downloadButton div i {
+#downloadButton span i {
   font-size: x-large;
   top: 30%;
   left: 35%;
@@ -711,15 +710,15 @@ body .navContainer nav ul #navBar:hover::before {
   transform: translateY(-50px);
 }
 
-#downloadButton:hover div i {
+#downloadButton:hover span i {
   transform: translateY(-6px);
 }
 
-#downloadButton div h4 {
+#downloadButton span h4 {
   transition: transform 0.2s ease-in;
 }
 
-#downloadButton:hover div h4 {
+#downloadButton:hover span h4 {
   transform: translateY(40px);
 }
 
@@ -959,12 +958,16 @@ body .navContainer nav ul #navBar:hover::before {
   color: var(--textColor);
   opacity: 0.8;
 }
-#demo,
+
+.demo,
 #SendDemo,
 #hireMeButton #hireText {
   transition: transform 0.2s ease-in;
 }
-#live,
+.live{
+  display: flex;
+}
+.live,
 #sendSym,
 #hireMeButton i {
   font-size: x-large;
@@ -972,12 +975,12 @@ body .navContainer nav ul #navBar:hover::before {
   top: -30px;
   transition: transform 0.2s ease-in;
 }
-.projectButton:hover #live,
+.projectButton:hover .live,
 #submit:hover #sendSym,
 #hireMeButton:hover i {
   transform: translateY(40px);
 }
-.projectButton:hover #demo,
+.projectButton:hover .demo,
 #submit:hover #SendDemo,
 #hireMeButton:hover #hireText {
   transform: translateY(30px);
