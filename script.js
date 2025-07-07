@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedback = document.querySelector("feedback");
 
   // loader -----
-  window.addEventListener("load", () => {
-    document.body.classList.remove('loading');
+  window.addEventListener("load", () => {    
     loader.style.display = "none";
     typeWriter();
   });

@@ -702,7 +702,7 @@ body .navContainer nav ul #navBar:hover::before {
 #downloadButton {
   font-size: 0.9em;
 }
-#downloadButton span i {
+#downloadButton div i {
   font-size: x-large;
   top: 30%;
   left: 35%;
@@ -711,15 +711,15 @@ body .navContainer nav ul #navBar:hover::before {
   transform: translateY(-50px);
 }
 
-#downloadButton:hover span i {
+#downloadButton:hover div i {
   transform: translateY(-6px);
 }
 
-#downloadButton span h4 {
+#downloadButton div h4 {
   transition: transform 0.2s ease-in;
 }
 
-#downloadButton:hover span h4 {
+#downloadButton:hover div h4 {
   transform: translateY(40px);
 }
 

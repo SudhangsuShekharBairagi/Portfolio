@@ -45,7 +45,7 @@
           </a></li>
       </ul>
       <ul id="moblieNavUl">
-        <li><i id="menuBar" class="fa-solid fa-bars"></i></i></li>
+        <li><i id="menuBar" class="fa-solid fa-bars"></i></li>
       </ul>
     </nav>
 
@@ -69,16 +69,16 @@
         <h2 class="HName">I am Sudhangsu Shekhar Bairagi</h2>
         <!-- <h2>🎓</h2> -->
         <h4 id="typingSection">Aspiring Software <span class="typingAnimation"> </span></h4>
-        <a href="mailto:bairagisudhangsu@gmail.com">
-          <button style="margin-top:10px ;" id="hireMeButton">
+        <a href="mailto:bairagisudhangsu@gmail.com" id="hireMeButton" >
+        
             <h4 id="hireText">HIRE ME</h4>
             <i class="fa-solid fa-briefcase"></i>
-          </button>
+          
         </a>
       </div>
 
       <div class="homePic">
-        <img loading="lazy" src="assert\Sudhangsu.png" alt="Image of Sudhangsu Shekhar Bairagi">
+        <img loading="lazy" src="\assert\Sudhangsu.png" alt="Image of Sudhangsu Shekhar Bairagi" >
       </div>
       <div class="socialMedia">
         <a href="https://www.facebook.com/share/1AHaPqyF5e/" class="face"><i
@@ -98,7 +98,7 @@
 
       <div class="aboutMe">
 
-        <img class="aboutImg" loading="lazy" src="assert\SudhangsuShekhar.png" style="width:100%" alt="image">
+        <img class="aboutImg" loading="lazy" src="\assert\SudhangsuShekhar.png" style="width:100%" alt="image">
 
       </div>
 
@@ -115,11 +115,11 @@
           connect with me to discuss potential opportunities or collaborations!</p>
         <span id="downloadCv">
 
-          <a id="downloadButton" href="assert\SudhangsuShekharBairagiResuma.pdf" download="Resume.pdf">
-            <span>
+          <a id="downloadButton" href="\assert\SudhangsuShekharBairagiResuma.pdf" download="Resume.pdf" >
+            <div>
               <h4>RESUME</h4>
               <i class="fa-solid fa-download"></i>
-            </span>
+            </div>
           </a>
         </span>
 
@@ -267,9 +267,7 @@
           </div>
         </div>
         <div>
-
-
-
+      </div>
     </section>
     <!-- projects -->
     <section id="projects" class="project-section">
@@ -285,46 +283,46 @@
           <h2>Runner</h2>
           <p>Real-time web-based chat app with user authentication built using HTML, CSS, Bootstrap, JavaScript, PHP,
             and MySQL </p>
-          <button type="button" class="projectButton">
-            <h4 id="demo">DEMO</h4>
-            <span id="live">
+          <div type="button" class="projectButton">
+            <h4 class="demo">DEMO</h4>
+            <span class="live">
               <i class="fa-solid fa-laptop"></i>
               <i class="fa-solid fa-mobile-screen-button"></i>
             </span>
-          </button>
+          </div>
         </div>
 
         <div class="project-card">
           <video type="video/mp4" poster="assert/IMAGE.png" loop autoplay muted>
-            <source src="assert/Grame-Video.mp4" type="video/mp4">
+            <source src="assert/Grame-Video.mp4" >
             Your browser doesn't support the video tag.
           </video>
           <h2>Tic-Tac-Toe Game </h2>
           <p>A two-player web-based game with interactive UI using HTML, CSS, JavaScript</p>
-          <button type="button" class="projectButton">
-            <h4 id="demo">DEMO</h4>
-            <span id="live">
+           <div type="button" class="projectButton">
+            <h4 class="demo">DEMO</h4>
+            <span class="live">
               <i class="fa-solid fa-laptop"></i>
               <i class="fa-solid fa-mobile-screen-button"></i>
             </span>
-          </button>
+          </div>
         </div>
 
         <div class="project-card">
-          <video type="video/mp4" poster="assert/Calculator-Image.png" loop autoplay playsinline muted>
+          <video poster="assert/Calculator-Image.png" loop autoplay playsinline muted>
             <source src="assert/Simple-Calculator-Video.mp4" type="video/mp4">
             Your browser doesn't support the video tag.
 
           </video>
           <h2>Simple Calculator</h2>
           <p>A simple calculator application built using HTML, CSS, JavaScript.</p>
-          <button type="button" class="projectButton">
-            <h4 id="demo">DEMO</h4>
-            <span id="live">
+           <div type="button" class="projectButton">
+            <h4 class="demo">DEMO</h4>
+            <span class="live">
               <i class="fa-solid fa-laptop"></i>
               <i class="fa-solid fa-mobile-screen-button"></i>
             </span>
-          </button>
+          </div>
         </div>
 
         <div class="project-card">
@@ -371,7 +369,7 @@
         <textarea name="message" id="massage" placeholder="Message" maxlength="1000" style="resize: none; height: 60px;"
           required></textarea>
         <button type="submit" id="submit">
-          <h4 id="SendDemo">SEND</h4><i id="sendSym" class="fa-solid fa-paper-plane"></i>
+          <span id="SendDemo">SEND</span><i id="sendSym" class="fa-solid fa-paper-plane"></i>
         </button>
       </form>
 
