@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 // typing effect 
-  const texts = ["Web Developer", "Tech Enthusiast", "Open Source Contributor"];
+  const texts = ["Web Developer", "Tech Enthusiast"];
   const typeSpeed = 150;
   const delayAfterTyping = 2000;
   let textIndex = 0;
