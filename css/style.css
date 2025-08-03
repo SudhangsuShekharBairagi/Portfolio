@@ -28,6 +28,7 @@
   --accentColor: #007bff;
   --typingColor: #00ff00;
   --card-color: #7cc9fc00;
+  --loader-text-color: #007bff;
   /* 4682A9
 749BC2 */
 }
@@ -78,24 +79,26 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: transparent;
+  background-color: #000000;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
-.loader {
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  animation: loaderRoated 0.1s linear infinite;
-
-  top: 50%;
-  left: 50%;
-  z-index: 2;
+svg {
+  width: 20rem;
+  font-weight: 700;
+}
+svg text {
+  font-size: 5rem;
+  stroke-width: 2;
+}
+svg text.text-body {
+  stroke: var(--loader-text-color);
+  animation: 2s infinite alternate animation-stroke;
 }
 
 h1 {
@@ -964,7 +967,7 @@ body .navContainer nav ul #navBar:hover::before {
 #hireMeButton #hireText {
   transition: transform 0.2s ease-in;
 }
-.live{
+.live {
   display: flex;
 }
 .live,

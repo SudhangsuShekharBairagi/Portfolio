@@ -91,7 +91,28 @@
     border-top: 10px dotted rgb(85, 255, 12);
   }
 }
-
+@keyframes animation-stroke {
+  0% {
+    fill: transparent;
+    stroke: var(--loader-text-color);
+    stroke-width: 2;
+    stroke-dashoffset: 10%;
+    stroke-dasharray: 0 30%;
+  }
+  50% {
+    fill: transparent;
+    stroke: var(--loader-text-color);
+    stroke-width: 2;
+  }
+  80%,
+  100% {
+    fill: var(--loader-text-color);
+    stroke: transparent;
+    stroke-width: 0;
+    stroke-dashoffset: -10%;
+    stroke-dasharray: 30% 0;
+  }
+}
 @supports not (animation-timeline: view()) {
   .about,
   .aboutMe .myInf,
