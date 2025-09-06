@@ -586,7 +586,7 @@ body .navContainer nav ul #navBar:hover::before {
 }
 
 .about p {
-  font-size: rem;
+  font-size: 1rem;
 }
 
 .aboutMe {
@@ -961,7 +961,9 @@ body .navContainer nav ul #navBar:hover::before {
   color: var(--textColor);
   opacity: 0.8;
 }
-
+#SendDemo {
+  font-size: 1rem;
+}
 .demo,
 #SendDemo,
 #hireMeButton #hireText {
