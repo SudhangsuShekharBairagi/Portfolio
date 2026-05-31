@@ -1,200 +1,202 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  const navBarColor = document.getElementById("navBar");
-  const menuButton = document.querySelector("#menuBar");
-  const menuButton2 = document.querySelector(".menuBar2");
-  const mobileNav = document.querySelector("#mobileNav");
-  const MenuLiMoblie = document.querySelectorAll(".MenuLiMoblie");
-  const loader = document.querySelector(".loaderContainer");
-  
-  let nav = document.querySelector(".navClass");
+﻿document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const header = document.querySelector(".site-header");
   const toggleBtn = document.getElementById("toggle-btn");
-  const iconToggleMoon = document.querySelector(".fa-moon");
-  const iconToggleSun = document.querySelector(".fa-sun");
-  let navbar = document.querySelector(".navClass");
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a");
-  const feedback = document.querySelector("feedback");
-
-  // loader -----
-  window.addEventListener("load", () => {    
-    loader.style.display = "none";
-    typeWriter();
-  });
-
-  // load the theme for the local storage ----
-  window.addEventListener("load", () => {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
-    }
-  });
-  // light & drak mode ------
-  nav.classList.remove("shadow");
-
-  iconToggleSun.classList.add("hide");
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    iconToggleSun.classList.toggle("hide");
-    iconToggleMoon.classList.toggle("hide");
-
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-  });
-
-// menu button show or hide
-
-  MenuLiMoblie.forEach((element) => {
-    element.addEventListener("click", () => menuShowAndHide());
-  });
-
-  menuButton.addEventListener("click", () => menuShowAndHide());
-  menuButton2.addEventListener("click", () => menuShowAndHide());
-
-  function menuShowAndHide() {
-    mobileNav.classList.toggle("show");
-    document.body.classList.toggle("no-scroll");
-  }
-
-  window.addEventListener("scroll", (e) => {
-    if (window.scrollY > 0) {
-      nav.classList.add("shadow");
-    } else {
-      nav.classList.remove("shadow");
-    }
-  });
-// typing effect 
-  const texts = ["Web Developer", "Tech Enthusiast"];
-  const typeSpeed = 150;
+  const iconMoon = document.querySelector(".fa-moon");
+  const iconSun = document.querySelector(".fa-sun");
+  const menuButton = document.getElementById("menuBar");
+  const mobileNav = document.getElementById("mobileNav");
+  const closeMenu = document.getElementById("navButton");
+  const navLinks = document.querySelectorAll(".site-nav a, .mobile-nav-links a");
+  const revealItems = document.querySelectorAll(".reveal");
+  const sections = document.querySelectorAll("section[id]");
+  const goToTop = document.getElementById("goToTop");
+  const loader = document.querySelector(".loaderContainer");
+  const contactForm = document.getElementById("contactForm");
+  const submitButton = document.getElementById("submit");
+  const originalSubmitContent = submitButton.innerHTML;
+  const texts = ["React Developer", "Spring Boot Enthusiast", "Full-Stack Creator"];
+  const typeSpeed = 100;
+  const deleteSpeed = 70;
   const delayAfterTyping = 2000;
   let textIndex = 0;
   let charIndex = 0;
+  let isDeleting = false;
+  let lastScrollTop = 0;
 
-  function typeWriter() {
-    const currentText = texts[textIndex];
-    const typingElement = document.querySelector(".typingAnimation");
-
-    if (charIndex < currentText.length) {
-      typingElement.innerHTML += currentText.charAt(charIndex);
-      charIndex++;
-      setTimeout(typeWriter, typeSpeed);
-    } else {
-      setTimeout(() => {
-        typingElement.innerHTML = "";
-        charIndex = 0;
-        textIndex = (textIndex + 1) % texts.length;
-        setTimeout(typeWriter, typeSpeed);
-      }, delayAfterTyping);
+  window.addEventListener("load", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      body.classList.add("light-mode");
     }
+    updateThemeIcon();
+    finishLoader();
+    typeWriter();
+    revealOnScroll();
+    handleScroll();
+  });
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    const isLight = body.classList.contains("light-mode");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+    updateThemeIcon();
+  });
+
+  function updateThemeIcon() {
+    const isLight = body.classList.contains("light-mode");
+    iconMoon.classList.toggle("hide", isLight);
+    iconSun.classList.toggle("hide", !isLight);
   }
 
-//scroll effect 
-  let lastScrollTop = 0;
- 
-  window.addEventListener("scroll", () => {
-    // console.log(window.pageYOffset);
-    const currentScroll =
-      window.pageYOffset || document.documentElement.scrollTop;
+  menuButton.addEventListener("click", toggleMobileMenu);
+  closeMenu.addEventListener("click", toggleMobileMenu);
 
-    if (currentScroll > lastScrollTop) {
-      navbar.classList.add("navbar-hidden");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (mobileNav.classList.contains("show")) {
+        toggleMobileMenu();
+      }
+    });
+  });
+
+  function toggleMobileMenu() {
+    const isOpen = mobileNav.classList.toggle("show");
+    mobileNav.setAttribute("aria-hidden", String(!isOpen));
+    body.classList.toggle("no-scroll", isOpen);
+  }
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 120) {
+      header.classList.add("navbar-hidden");
     } else {
-      navbar.classList.remove("navbar-hidden");
+      header.classList.remove("navbar-hidden");
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 
+    handleScroll();
+  });
 
+  function handleScroll() {
+    if (window.scrollY > 20) {
+      header.classList.add("shadow");
+    } else {
+      header.classList.remove("shadow");
+    }
+
+    if (window.pageYOffset > 300) {
+      goToTop.classList.add("show");
+    } else {
+      goToTop.classList.remove("show");
+    }
+
+    updateActiveNav();
+  }
+
+  function updateActiveNav() {
     let current = "";
-
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-   
-      if (pageYOffset + 150 >= sectionTop) {
+      if (window.pageYOffset + 180 >= sectionTop) {
         current = section.getAttribute("id");
       }
     });
+
     navLinks.forEach((link) => {
-      link.classList.remove("active");
-
-      if (link.getAttribute("href") === "#" + current) {
-      
-        link.classList.add("active");
-
-      }
+      link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
     });
+  }
 
-
-    if (window.pageYOffset > 200) {
-  document.getElementById("goToTop").classList.remove("hideGoToButton");
-} else {
-  document.getElementById("goToTop").classList.add("hideGoToButton");
-}
-
+  goToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  document.getElementById("contactForm").addEventListener("submit", async function (event) {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const form = event.target;
-    const formData = new FormData(form);
-    const submitButton = document.getElementById("submit");
-
-    // Disable the button and show sending status (optional)
     submitButton.disabled = true;
     submitButton.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
 
     try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm),
         headers: {
-          'Accept': 'application/json'
-        }
+          Accept: "application/json",
+        },
       });
 
       if (response.ok) {
         alert("✅ Message sent successfully!");
-        form.reset();
+        contactForm.reset();
       } else {
         alert("❌ Failed to send message. Please try again later.");
       }
     } catch (error) {
       alert("⚠️ Something went wrong. Please check your internet connection.");
     } finally {
-      // Re-enable the button and restore icon
       submitButton.disabled = false;
-      submitButton.innerHTML = `<i class="fa-solid fa-paper-plane"></i>`;
+      submitButton.innerHTML = originalSubmitContent;
     }
   });
-  document.getElementById("goToTop").addEventListener("click", () => {
-  document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+
+  function typeWriter() {
+    const typingElement = document.querySelector(".hero-eyebrow");
+    const currentText = texts[textIndex];
+
+    if (isDeleting) {
+      typingElement.textContent = currentText.slice(0, charIndex - 1);
+      charIndex -= 1;
+
+      if (charIndex < 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        charIndex = 0;
+        setTimeout(typeWriter, 250);
+        return;
+      }
+      setTimeout(typeWriter, deleteSpeed);
+    } else {
+      typingElement.textContent = currentText.slice(0, charIndex + 1);
+      charIndex += 1;
+
+      if (charIndex > currentText.length) {
+        isDeleting = true;
+        setTimeout(typeWriter, delayAfterTyping);
+        return;
+      }
+      setTimeout(typeWriter, typeSpeed);
+    }
+  }
+
+  function revealOnScroll() {
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      revealItems.forEach((element) => element.classList.add('active'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    revealItems.forEach((element) => observer.observe(element));
+  }
+
+  function finishLoader() {
+    loader.classList.add('fade-out');
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500);
+  }
 });
-  
-// about section image move 
-  const container = document.querySelector('.aboutMe');
-  const image = document.querySelector('.aboutImg');
-
-  container.addEventListener('mousemove', (e) => {
-    const rect = container.getBoundingClientRect();
-    const x = e.clientX - rect.left; // x position within container
-    const y = e.clientY - rect.top;  // y position within container
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -20; // max 20deg tilt
-    const rotateY = ((x - centerX) / centerX) * 20;
-
-    image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
-
-  container.addEventListener('mouseleave', () => {
-    image.style.transform = 'rotateX(0deg) rotateY(0deg)';
-  });
-});
-
-

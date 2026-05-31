@@ -1,21 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sudhangsu Shekhar Bairagi | BCA Student Portfolio</title>
+    <title>Sudhangsu Shekhar Bairagi — Full-Stack Engineer</title>
     <link rel="icon" href="assert/logo.png" type="image/png" />
-
     <meta
       name="description"
-      content="Explore the portfolio of Sudhangsu Shekhar Bairagi - a BCA student and aspiring software developer passionate about full-stack development."
+      content="Premium portfolio of Sudhangsu Shekhar Bairagi — React, Spring Boot, and modern frontend craftsmanship for recruiters and clients."
     />
     <meta
       name="keywords"
-      content="Sudhangsu,Sudhangsu, Shekhar, Bairagi, Portfolio,Portfolio of Sudhangsu,Sudhansu,profile of Shekhar, Portfolio of Bairagi,  Web Developer, BCA, JavaScript, HTML, CSS, React, Java, DBMS"
+      content="Sudhangsu, Sudhangsu Shekhar Bairagi, Portfolio, React, Spring Boot, Java, Full-stack, UI, UX, Web Developer"
     />
     <meta name="author" content="Sudhangsu Shekhar Bairagi" />
-
+    <meta name="theme-color" content="#0ea5e9" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -24,509 +23,457 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animationCss.css" />
-    <link rel="stylesheet" href="css/mediaScreen.css" />
-    <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "t74onb9030");
-    </script>
   </head>
 
   <body>
-    <!-- loader -->
-    <div class="loaderContainer">
-      <svg viewBox="0 0 550 160">
-        <text x="50%" y="50%" dy=".32em" text-anchor="middle" class="text-body">
-          S S B
-        </text>
-      </svg>
+    <div class="loaderContainer" aria-hidden="true">
+      <div class="loader-inner">
+        <span>SSB</span>
+      </div>
     </div>
-    <!-- nav -->
-    <div class="navContainer">
-      <nav class="navClass shadow">
-        <ul>
-          <li id="nameWEB">
-            <img loading="lazy" src="assert/logo.png" alt="SSB" />
-          </li>
-          <li>
-            <button id="toggle-btn">
-              <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
-            </button>
-          </li>
-        </ul>
-        <ul id="PCNavUl">
-          <li>
-            <a href="#home" class="navLink"
-              ><i class="fa-solid fa-house"></i> Home</a
-            >
-          </li>
-          <li>
-            <a href="#About" class="navLink"
-              ><i class="fa-solid fa-user"></i> About</a
-            >
-          </li>
-          <li>
-            <a href="#skill" class="navLink"
-              ><i class="fas fa-lightbulb"></i> Skills</a
-            >
-          </li>
-          <li>
-            <a href="#projects" class="navLink"
-              ><i class="fas fa-diagram-project"></i> Projects</a
-            >
-          </li>
-          <li>
-            <a href="#Contact" class="navLink"
-              ><i class="fas fa-envelope"></i> Contact
-            </a>
-          </li>
-        </ul>
-        <ul id="moblieNavUl">
-          <li><i id="menuBar" class="fa-solid fa-bars"></i></li>
-        </ul>
+
+    <header class="site-header">
+      <a href="#home" class="brand-link">
+        <img loading="lazy" src="assert/logo.png" alt="SSB brand logo" />
+        <div class="brand-copy">
+          <span class="brand-eyebrow">Branding + Code</span>
+          <strong>Sudhangsu Shekhar Bairagi</strong>
+        </div>
+      </a>
+
+      <nav class="site-nav navClass" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#About">About</a>
+        <a href="#skill">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#Contact">Contact</a>
       </nav>
 
-      <nav id="mobileNav">
-        <button class="menuBar2" id="navButton">
+      <div class="header-actions">
+        <button id="toggle-btn" class="theme-toggle" aria-label="Toggle color theme">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <button id="menuBar" class="mobile-toggle" aria-label="Open mobile menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobileNav" class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-panel">
+        <button id="navButton" class="mobile-close" aria-label="Close menu">
           <i class="fa-solid fa-xmark"></i>
         </button>
-        <ul>
-          <li class="MenuLiMoblie">
-            <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li class="MenuLiMoblie">
-            <a href="#About"><i class="fa-solid fa-user"></i> About</a>
-          </li>
-          <li class="MenuLiMoblie">
-            <a href="#skill"><i class="fas fa-lightbulb"></i> Skills</a>
-          </li>
-          <li class="MenuLiMoblie">
-            <a href="#projects"
-              ><i class="fas fa-diagram-project"></i> Projects</a
-            >
-          </li>
-          <li class="MenuLiMoblie">
-            <a href="#Contact"><i class="fas fa-envelope"></i> Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <!-- home -->
-    <div class="MainBodyContainer">
-      <section class="home" id="home">
-        <div class="homeName">
-          <h1 id="hiHand">&#128075;</h1>
-          <h2 class="HName">I am Sudhangsu Shekhar Bairagi</h2>
-          <!-- <h2>🎓</h2> -->
-          <h4 id="typingSection">
-            Aspiring <span class="typingAnimation"> </span>
-          </h4>
-          <a href="mailto:bairagisudhangsu@gmail.com" id="hireMeButton">
-            <h4 id="hireText">HIRE ME</h4>
-            <i class="fa-solid fa-briefcase"></i>
-          </a>
-        </div>
-
-        <div class="homePic">
-          <img
-            loading="lazy"
-            src="assert/Sudhangsu.png"
-            alt="Image of Sudhangsu Shekhar Bairagi"
-          />
-        </div>
-        <div class="socialMedia">
-          <a href="https://www.facebook.com/share/1AHaPqyF5e/" class="face"
-            ><i class="fa-brands fa-square-facebook"></i
-          ></a>
-          <a href="https://www.instagram.com/s_s_bairagi_06j/" class="beforeIn"
-            ><i class="fa-brands fa-square-instagram"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/sudhangsu-shekhar-bairagi-707b64292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            class="linkedin"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-        </div>
-      </section>
-
-      <!-- about  -->
-      <section class="containerAboutSkill" id="About">
-        <h1>About</h1>
-
-        <div class="aboutMe">
-          <img
-            class="aboutImg"
-            loading="lazy"
-            src="assert/SudhangsuShekhar.png"
-            style="width: 100%"
-            alt="image"
-          />
-        </div>
-
-        <div class="about">
-          <p>
-            I'm a BCA student passionate about coding and web development. My
-            expertise lies in JavaScript, React, and backend development with
-            Java. I enjoy building user-friendly applications and solving
-            real-world problems through technology.
-          </p>
-          <p>
-            Currently, I'm exploring full-stack development and working on
-            projects like a resume builder and a calculator with history
-            storage. My ultimate goal is to excel as a full-stack developer and
-            contribute to innovative projects.
-          </p>
-          <p>
-            In my free time, I enjoy learning new technologies and staying
-            updated on current affairs. Feel free to connect with me to discuss
-            potential opportunities or collaborations!
-          </p>
-          <span id="downloadCv">
-            <a
-              id="downloadButton"
-              href="assert\SudhangsuShekharBairagiResuma.pdf"
-              download="Resume.pdf"
-            >
-              <span>
-                <h4>RESUME</h4>
-                <i class="fa-solid fa-download"></i>
-              </span>
-            </a>
-          </span>
-        </div>
-      </section>
-      <!-- skill  -->
-      <section class="skillSection" id="skill">
-        <h1 class="skillH1">Skill</h1>
-
-        <div class="concept" id="programmingLanguages">
-          <h3 class="skillCategory">Programming Languages</h3>
-
-          <div class="progress">
-            <h4 class="progressHeading">Java</h4>
-            <div class="progressBar" style="--barWidth: 80%">
-              <span class="ProgresPercentage">80%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">Python</h4>
-            <div class="progressBar" style="--barWidth: 20%">
-              <span class="ProgresPercentage">20%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">JavaScript</h4>
-            <div class="progressBar" style="--barWidth: 65%">
-              <span class="ProgresPercentage">65%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">C++</h4>
-            <div class="progressBar" style="--barWidth: 50%">
-              <span class="ProgresPercentage">50%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">C</h4>
-            <div class="progressBar" style="--barWidth: 70%">
-              <span class="ProgresPercentage">70%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="concept" id="technnicalSub">
-          <h3 class="skillCategory">Technical Subjects</h3>
-          <div class="progress">
-            <h4 class="progressHeading">CN</h4>
-            <div class="progressBar" style="--barWidth: 50%">
-              <span class="ProgresPercentage">50%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">DBMS</h4>
-            <div class="progressBar" style="--barWidth: 60%">
-              <span class="ProgresPercentage">60%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">DSA</h4>
-            <div class="progressBar" style="--barWidth: 50%">
-              <span class="ProgresPercentage">50%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">UNIX</h4>
-            <div class="progressBar" style="--barWidth: 80%">
-              <span class="ProgresPercentage">80%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">OS</h4>
-            <div class="progressBar" style="--barWidth: 88%">
-              <span class="ProgresPercentage">88%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="concept" id="webDev">
-          <h3 class="skillCategory">Web Development</h3>
-          <div class="progress">
-            <h4 class="progressHeading">HTML</h4>
-            <div class="progressBar" style="--barWidth: 90%">
-              <span class="ProgresPercentage">90%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">CSS / Tailwindcss</h4>
-            <div class="progressBar" style="--barWidth: 86%">
-              <span class="ProgresPercentage">86%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">JavaScript / React</h4>
-            <div class="progressBar" style="--barWidth: 85%">
-              <span class="ProgresPercentage">85%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">PHP</h4>
-            <div class="progressBar" style="--barWidth: 40%">
-              <span class="ProgresPercentage">40%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">MySQL</h4>
-            <div class="progressBar" style="--barWidth: 73%">
-              <span class="ProgresPercentage">73%</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="concept">
-          <h3 class="skillCategory">Tools & Platforms</h3>
-          <div class="progress">
-            <h4 class="progressHeading">Git & GitHub</h4>
-            <div class="progressBar" style="--barWidth: 70%">
-              <span class="ProgresPercentage">70%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">VS Code</h4>
-            <div class="progressBar" style="--barWidth: 95%">
-              <span class="ProgresPercentage">95%</span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <h4 class="progressHeading">Bootstrap</h4>
-            <div class="progressBar" style="--barWidth: 50%">
-              <span class="ProgresPercentage">50%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">Linux Terminal</h4>
-            <div class="progressBar" style="--barWidth: 50%">
-              <span class="ProgresPercentage">50%</span>
-            </div>
-          </div>
-          <div class="progress">
-            <h4 class="progressHeading">Sublime Text</h4>
-            <div class="progressBar" style="--barWidth: 88%">
-              <span class="ProgresPercentage">88%</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- projects -->
-      <section id="projects" class="project-section">
-        <h1>My Projects</h1>
-        <div class="project-container">
-          <div class="project-card">
-            <video poster="assert/home.png" loop autoplay playsinline muted>
-              <source src="assert/Chat-App-Video.mp4" type="video/mp4" />
-              Your browser doesn't support the video tag.
-            </video>
-            <h2>Runner</h2>
-            <p>
-              Real-time web-based chat app with user authentication built using
-              HTML, CSS, Bootstrap, JavaScript, PHP, and MySQL
-            </p>
-            <div class="projectButton">
-              <h4 class="demo">DEMO</h4>
-              <span class="live">
-                <i class="fa-solid fa-laptop"></i>
-                <i class="fa-solid fa-mobile-screen-button"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <video poster="assert/movie.png" loop autoplay muted>
-              <source src="assert/search-app.mp4" />
-              Your browser doesn't support the video tag.
-            </video>
-            <h2>Movie Explorer</h2>
-            <p>
-              A React-based movie search application powered by the TMDB API. It
-              allows users to search for movies, TV series, and actors, explore
-              trending and top-rated titles, and view detailed information with
-              a clean, responsive UI.
-            </p>
-            <div class="projectButton">
-              <h4 class="demo">DEMO</h4>
-              <span class="live">
-                <i class="fa-solid fa-laptop"></i>
-                <i class="fa-solid fa-mobile-screen-button"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <video
-              poster="assert/Calculator-Image.png"
-              loop
-              autoplay
-              playsinline
-              muted
-            >
-              <source
-                src="assert/Simple-Calculator-Video.mp4"
-                type="video/mp4"
-              />
-              Your browser doesn't support the video tag.
-            </video>
-            <h2>Simple Calculator</h2>
-            <p>
-              A simple calculator application built using HTML, CSS, JavaScript.
-            </p>
-            <div class="projectButton">
-              <h4 class="demo">DEMO</h4>
-              <span class="live">
-                <i class="fa-solid fa-laptop"></i>
-                <i class="fa-solid fa-mobile-screen-button"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <img
-              loading="lazy"
-              src="https://cdn.pixabay.com/photo/2021/01/01/00/00/blurred-background-12345_1280.jpg"
-              alt="Comming soon"
-            />
-            <h2>Restaurant Management System</h2>
-            <p>This project is under development. Stay tuned!</p>
-            <span class="coming-soon-badge">Coming Soon</span>
-          </div>
-
-          <div class="project-card">
-            <img
-              loading="lazy"
-              src="https://cdn.pixabay.com/photo/2021/01/01/00/00/blurred-background-12345_1280.jpg"
-              alt="Comming soon"
-            />
-            <h2>Upcoming Project</h2>
-            <p>This project is under development. Stay tuned!</p>
-            <span class="coming-soon-badge">Coming Soon</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- contact & feedback  -->
-      <section class="contactUs" id="Contact">
-        <h1>Contact Me</h1>
-        <div class="addressEmailPh">
-          <div class="AEPSection">
-            <i class="fa-solid fa-location-dot"></i>
-            <span id="add">Magrahat, West Bengal - 743355</span>
-          </div>
-          <div class="AEPSection">
-            <i class="fa-solid fa-envelope"></i>
-            <span id="mail">bairagisudhangsu@gmail.com</span>
-          </div>
-          <div class="AEPSection">
-            <i class="fa-solid fa-phone"></i>
-            <span id="ph">+91 7029120726</span>
-          </div>
-        </div>
-        <form
-          class="feedback"
-          action="https://formspree.io/f/mvgagnkw"
-          method="POST"
-          id="contactForm"
-        >
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name"
-            required
-          />
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Your email"
-            required
-          />
-          <input
-            type="text"
-            name="phNumber"
-            id="phNumber"
-            placeholder="Enter phone number"
-            required
-          />
-          <!-- <input type="text" name="subject" id="subject" placeholder="Subject"> -->
-          <textarea
-            name="message"
-            id="massage"
-            placeholder="Message"
-            maxlength="1000"
-            style="resize: none; height: 60px"
-            required
-          ></textarea>
-          <button type="submit" id="submit">
-            <h4 id="SendDemo">SEND</h4>
-            <i id="sendSym" class="fa-solid fa-paper-plane"></i>
-          </button>
-        </form>
-      </section>
-    </div>
-    <!-- footer  -->
-    <footer>
-      <h1>Portfolio SSB</h1>
-      <!-- <p><a href="mailto:bairagisudhangsu@gmail.com?subject=Hello&body=Hi, I saw your portfolio...">Email Me</a>
-    </p> -->
-      <div class="mediaLink">
-        <a href="https://www.facebook.com/share/1AHaPqyF5e/" class="face"
-          ><i class="fa-brands fa-square-facebook"></i
-        ></a>
-        <a href="https://www.instagram.com/s_s_bairagi_06j/" class="beforeIn"
-          ><i class="fa-brands fa-square-instagram"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/sudhangsu-shekhar-bairagi-707b64292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          class="linkedin"
-          ><i class="fa-brands fa-linkedin"></i
-        ></a>
+        <nav class="mobile-nav-links" aria-label="Mobile navigation">
+          <a href="#home">Home</a>
+          <a href="#About">About</a>
+          <a href="#skill">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#Contact">Contact</a>
+        </nav>
       </div>
-      <p id="copyRight">
-        <i class="fas fa-copyright"></i> 2025 Sudhangsu Shekhar Bairagi. All
-        rights reserved.
-      </p>
+    </div>
+
+    <main class="page-body">
+      <section class="hero-section reveal" id="home">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">Full-stack developer · React · Spring Boot</span>
+          <h1>Crafting premium digital experiences for brands, startups, and recruiters.</h1>
+          <p class="hero-description">
+            I build polished interfaces and scalable web applications with modern frontend craft, clean Java backends, and a strong design-first approach.
+          </p>
+          <div class="hero-actions">
+            <!-- <a href="mailto:bairagisudhangsu@gmail.com" class="button button-primary">
+              Hire Me <i class="fa-solid fa-paper-plane"></i>
+            </a> -->
+            <a href="assert/SudhangsuShekharBairagiResuma.pdf" download="Resume.pdf" class="button button-secondary">
+              Download CV <i class="fa-solid fa-download"></i>
+            </a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <strong>3+</strong>
+              <span>Live projects</span>
+            </div>
+            <div class="metric-card">
+              <strong>Available</strong>
+              <span>for freelance</span>
+            </div>
+            <div class="metric-card">
+              <strong>Mobile-first</strong>
+              <span>responsive UI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-glow"></div>
+            <img src="assert/Sudhangsu.png" alt="Portrait of Sudhangsu Shekhar Bairagi" loading="lazy" />
+          </div>
+          <div class="hero-highlights">
+            <div class="highlight-card">
+              <span>UI Focus</span>
+              <strong>Interfaces that feel premium and intuitive.</strong>
+            </div>
+            <div class="highlight-card">
+              <span>Backend</span>
+              <strong>Spring Boot APIs, data services, and scalable logic.</strong>
+            </div>
+            <div class="highlight-card">
+              <span>Collaboration</span>
+              <strong>Clear delivery, polished handoff, and fast iteration.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section reveal" id="About">
+        <div class="section-heading">
+          <span>About me</span>
+          <h2>Design-led engineering for polished product experiences.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I'm a MCA student and aspiring full-stack engineer with a focus on polished user experiences, clean code, and scalable backend systems.
+            </p>
+            <ul class="about-highlights">
+              <li>Building responsive UI with React, Tailwind CSS, and modern HTML/CSS.</li>
+              <li>Creating backend services using Java, Spring Boot, REST APIs, and SQL.</li>
+              <li>Delivering production-ready projects with version control and clean design.</li>
+            </ul>
+            <p>
+              I love turning ideas into practical applications that feel smooth, fast, and easy to use. Let’s connect if you want a modern portfolio, business website, or developer tooling solution.
+            </p>
+            <div class="about-actions">
+              <a href="assert/SudhangsuShekharBairagiResuma.pdf" download="Resume.pdf" class="button button-primary-outline">
+                Download Resume
+              </a>
+              <a href="#Contact" class="button button-secondary">
+                Let's Talk
+              </a>
+            </div>
+          </div>
+          <div class="about-panel">
+            <div class="panel-card">
+              <p class="panel-label">Core focus</p>
+              <h3>React frontends, Java backends, and clean product delivery.</h3>
+            </div>
+            <div class="panel-grid">
+              <div class="panel-stat">
+                <strong>3+</strong>
+                <span>Live project deliveries</span>
+              </div>
+              <div class="panel-stat">
+                <strong>Remote ready</strong>
+                <span>Available for freelance and internships</span>
+              </div>
+              <div class="panel-stat">
+                <strong>Responsive</strong>
+                <span>Mobile-first design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section reveal" id="skill">
+        <div class="section-heading">
+          <span>Skills</span>
+          <h2>Interactive skill design with modern technical depth.</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-card-head">
+              <h3>Programming Languages</h3>
+              <span>Core backend and scripting</span>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-fill" style="--fill: 92%"></span>
+            </div>
+            <div class="skill-tags">
+              <span>Java</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>C</span>
+              <span>SQL</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card-head">
+              <h3>Frontend & Styling</h3>
+              <span>Design-driven UI systems</span>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-fill" style="--fill: 94%"></span>
+            </div>
+            <div class="skill-tags">
+              <span>React</span>
+              <span>Tailwind CSS</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>Responsive UI</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card-head">
+              <h3>Backend & Frameworks</h3>
+              <span>Server-side architecture</span>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-fill" style="--fill: 88%"></span>
+            </div>
+            <div class="skill-tags">
+              <span>Spring Boot</span>
+              <span>Java Spring</span>
+              <span>REST APIs</span>
+             <span>MySQL</span>            
+
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-card-head">
+              <h3>Tools & Platforms</h3>
+              <span>Productivity and deployment</span>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-fill" style="--fill: 90%"></span>
+            </div>
+            <div class="skill-tags">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>VS Code</span>
+              <span>Linux</span>
+              <span>Docker</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience-section reveal" id="experience">
+        <div class="section-heading">
+          <span>Experience</span>
+          <h2>From student projects to production-ready web solutions.</h2>
+        </div>
+        <div class="experience-grid">
+          <div class="timeline-item">
+            <span class="timeline-year">2024</span>
+            <div>
+              <h3>MCA Student</h3>
+              <p>Focusing on full-stack development and polished frontend experiences while learning modern engineering workflows.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2025</span>
+            <div>
+              <h3>Freelance web development</h3>
+              <p>Delivering responsive interfaces, React experiences, and reliable Java/Spring Boot backend services.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">Today</span>
+            <div>
+              <h3>Project-driven growth</h3>
+              <p>Building production-ready portfolio work with clean interaction, polished design, and strong technical delivery.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-section reveal" id="projects">
+        <div class="section-heading">
+          <span>Projects</span>
+          <h2>Premium case studies built with modern web standards.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-media">
+              <video poster="assert/home.png" loop autoplay playsinline muted aria-label="Runner project preview">
+                <source src="assert/Chat-App-Video.mp4" type="video/mp4" />
+                Your browser doesn't support the video tag.
+              </video>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Live chat application</p>
+              <h3>Runner</h3>
+              <p>Real-time web-based chat app with user authentication built using HTML, CSS, Bootstrap, JavaScript, PHP, and MySQL.</p>
+              <div class="project-tags">
+                <span>Bootstrap</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Real-time UI</span>
+              </div>
+              <div class="project-actions">
+                <span class="project-badge">Demo coming soon</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-media">
+              <video poster="assert/movie.png" loop autoplay playsinline muted aria-label="Movie Explorer project preview">
+                <source src="assert/search-app.mp4" type="video/mp4" />
+                Your browser doesn't support the video tag.
+              </video>
+            </div>
+            <div class="project-content">
+              <p class="project-type">React application</p>
+              <h3>Movie Explorer</h3>
+              <p>A React-based movie search application powered by the TMDB API with a clean, responsive browsing experience.</p>
+              <div class="project-tags">
+                <span>React</span>
+                <span>TMDB API</span>
+                <span>Responsive</span>
+                <span>UX-focused</span>
+              </div>
+              <div class="project-actions">
+                <span class="project-badge">Live demo pending</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-media">
+              <video poster="assert/Calculator-Image.png" loop autoplay playsinline muted aria-label="Simple Calculator project preview">
+                <source src="assert/Simple-Calculator-Video.mp4" type="video/mp4" />
+                Your browser doesn't support the video tag.
+              </video>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Utility app</p>
+              <h3>Simple Calculator</h3>
+              <p>A polished calculator experience built using HTML, CSS, and JavaScript with intuitive interactions and responsive behavior.</p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>UI</span>
+              </div>
+              <div class="project-actions">
+                <span class="project-badge">Production ready</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-card-muted">
+            <div class="project-media">
+              <img
+                loading="lazy"
+                src="https://cdn.pixabay.com/photo/2021/01/01/00/00/blurred-background-12345_1280.jpg"
+                alt="Project coming soon"
+              />
+            </div>
+            <div class="project-content">
+              <p class="project-type">In development</p>
+              <h3>Restaurant Management System</h3>
+              <p>Currently under development — a modern management platform aimed at simplifying restaurant operations and workflow.</p>
+              <span class="project-tag coming-soon">Coming Soon</span>
+            </div>
+          </article>
+
+          <article class="project-card project-card-muted">
+            <div class="project-media">
+              <img
+                loading="lazy"
+                src="https://cdn.pixabay.com/photo/2021/01/01/00/00/blurred-background-12345_1280.jpg"
+                alt="Upcoming project"
+              />
+            </div>
+            <div class="project-content">
+              <p class="project-type">Upcoming project</p>
+              <h3>Next portfolio release</h3>
+              <p>Building the next case study for a modern application that combines clean UI with production-ready backend architecture.</p>
+              <span class="project-tag coming-soon">Coming Soon</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section reveal" id="Contact">
+        <div class="section-heading">
+          <span>Contact</span>
+          <h2>Let’s build something impressive together.</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <p class="contact-intro">Reach out for React development, Java/Spring Boot backend work, or polished product design.</p>
+            <div class="contact-details">
+              <div class="contact-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <strong>Location</strong>
+                  <span>Magrahat, West Bengal, India</span>
+                </div>
+              </div>
+              <div class="contact-card">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <strong>Email</strong>
+                  <span>ssbairagi.dev@gmail.com</span>
+                </div>
+              </div>
+              <div class="contact-card">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <strong>Phone</strong>
+                  <span>+91 7029120726</span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-panel-actions">
+              <a href="mailto:ssbairagi.dev@gmail.com" class="button button-primary">Email Me</a>
+              <a href="tel:+917029120726" class="button button-secondary">Call Me</a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/mvgagnkw" method="POST">
+            <div class="form-grid">
+              <input type="text" name="name" id="name" placeholder="Your name" required />
+              <input type="email" name="email" id="email" placeholder="Your email" required />
+            </div>
+            <div class="form-grid">
+              <input type="tel" name="phNumber" id="phNumber" placeholder="Phone number" required />
+              <input type="text" name="subject" id="subject" placeholder="Subject" required />
+            </div>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Tell me about your project"
+              maxlength="1000"
+              rows="6"
+              required
+            ></textarea>
+            <button type="submit" id="submit" class="button button-primary">
+              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-copy">
+        <p>Portfolio SSB</p>
+        <span>2026 Sudhangsu Shekhar Bairagi. All rights reserved.</span>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/1AHaPqyF5e/" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="https://www.instagram.com/s_s_bairagi_06j/" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/sudhangsu-shekhar-bairagi-707b64292" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
     </footer>
 
-    <button id="goToTop"><i class="fa-solid fa-arrow-up"></i></button>
+    <button id="goToTop" aria-label="Scroll to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
   </body>
