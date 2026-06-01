@@ -148,26 +148,27 @@
     const currentText = texts[textIndex];
 
     if (isDeleting) {
-      typingElement.textContent = currentText.slice(0, charIndex - 1);
       charIndex -= 1;
+      typingElement.textContent = currentText.slice(0, charIndex);
 
-      if (charIndex < 0) {
+      if (charIndex === 0) {
         isDeleting = false;
         textIndex = (textIndex + 1) % texts.length;
-        charIndex = 0;
         setTimeout(typeWriter, 250);
         return;
       }
+
       setTimeout(typeWriter, deleteSpeed);
     } else {
-      typingElement.textContent = currentText.slice(0, charIndex + 1);
       charIndex += 1;
+      typingElement.textContent = currentText.slice(0, charIndex);
 
-      if (charIndex > currentText.length) {
+      if (charIndex === currentText.length) {
         isDeleting = true;
         setTimeout(typeWriter, delayAfterTyping);
         return;
       }
+
       setTimeout(typeWriter, typeSpeed);
     }
   }
