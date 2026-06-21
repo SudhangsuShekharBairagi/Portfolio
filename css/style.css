@@ -730,6 +730,13 @@ body.light-mode .theme-toggle .fa-sun {
   letter-spacing: 0.18em;
   font-size: 0.78rem;
 }
+.project-note {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  font-style: italic;
+}
 
 .project-card h3 {
   margin-bottom: 16px;
