@@ -188,7 +188,7 @@
           }
         });
       },
-      { threshold: 0.18 }
+      { threshold: 0.01 }
     );
 
     revealItems.forEach((element) => observer.observe(element));
