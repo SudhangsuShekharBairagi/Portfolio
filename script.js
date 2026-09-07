@@ -22,7 +22,6 @@
   let textIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  let lastScrollTop = 0;
 
   window.addEventListener("load", () => {
     const savedTheme = localStorage.getItem("theme");
@@ -67,16 +66,6 @@
   }
 
   window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop && currentScroll > 120) {
-      header.classList.add("navbar-hidden");
-    } else {
-      header.classList.remove("navbar-hidden");
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-
     handleScroll();
   });
 
